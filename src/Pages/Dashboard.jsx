@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import React from 'react';
 import '../stylesheets/Login.css';
-import LeftContainer from '../Left/leftContainer';
-import RightContainer from '../Right/rightContainer';
+import LeftContainer from '../Left/LeftContainer';
+import RightContainer from '../Right/RightContainer';
 function Dashboard() {
   return (
       <>
@@ -10,7 +10,7 @@ function Dashboard() {
       <LeftContainer></LeftContainer>
       <RightContainer></RightContainer>
       </>
-  );
-}
+  )
+};
 
 export default Dashboard;

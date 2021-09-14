@@ -1,6 +1,6 @@
 import React from 'react';
-import ComList from './components.jsx';
-import ComSettings from './comSettings.jsx';
+import ComList from './Components.jsx';
+import ComSettings from './ComSettings.jsx';
 
 function LeftContainer () {
   return (
@@ -9,6 +9,6 @@ function LeftContainer () {
     <ComSettings />
     </>
     )
-}
+};
 
 export default LeftContainer;

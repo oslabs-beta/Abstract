@@ -1,5 +1,5 @@
 function Ipad() {
-    return;
+  return;
 };
 
 export default Ipad;

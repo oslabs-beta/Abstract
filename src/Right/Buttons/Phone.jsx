@@ -1,5 +1,5 @@
 function Phone() {
-    return;
+  return;
 };
 
 export default Phone;

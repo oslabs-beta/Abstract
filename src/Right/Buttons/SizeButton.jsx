@@ -9,6 +9,6 @@ function SizeButton() {
     <Phone/>
     </>
   )
-}
+};
 
 export default SizeButton;
