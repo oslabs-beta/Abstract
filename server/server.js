@@ -1,8 +1,17 @@
-const path = require('path');
-const express = require('express');
+// const path = import('path');
+// const express = require('express');
+// const app = express();
+// const PORT = 3000;
+// const dotenv = require('dotenv');
+// const accountController = require('./controllers/accountController');
+// const cors = require('cors');
+import accountController from '/home/ray/Abstract/server/controllers/accountController.js';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import path from 'path';
+import express from 'express';
 const app = express();
-const PORT = 3000;
-const dotenv = require('dotenv');
+const PORT = 5000;
 
 dotenv.config();
 
@@ -10,13 +19,26 @@ const AccessKey = process.env.GITHUB_OAUTH_CLIENT_ID;
 const SecretKey = process.env.GITHUB_OAUTH_CLIENT_SECRET;
 
 app.use(express.json());
+app.use(cors());
+
+// app.use(express.static(path.join(__dirname, 'build')));
 
 //oauth login
-app.get('/oauth', (req, res) => {
+app.get('/oauth', accountController.handleOAuth, (req, res) => {
   console.log('made it to the oauth route. AccessKey:', AccessKey)
-  return res.sendStatus(200);
+  return res.status(200).send('Oauth Completed');
+  // try {
+  //   const url = 'https://github.com/login/oauth/authorize?client_id=46fc52b044a6de2f4a82&scope=read:user&redirect_uri=http://localhost:3000/oauth&clientID=';
+  //   return res.status(200).redirect(url);
+  // }
+  // catch (e) {
+  //   console.log(e)
+  // } 
 });
 
+// app.get('/', (req, res) => {
+//   return res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Page not Found'));

@@ -1,13 +1,18 @@
-const db = require('../db/db.js');
-const fetch = require('node-fetch');
-const { v4: uuid } = require('uuid');
+// const db = require('../db/db.js');
+// const fetch = require('node-fetch');
+// const { v4: uuid } = require('uuid');
+import db from '../db/db.js';
+import fetch from 'node-fetch';
+import { v4 as uuid } from 'uuid';
 const accountController = {};
+export default accountController;
 
 accountController.handleOAuth = async (req, res, next) => {
     // req.params
     console.log('oauth req: ', req.query);
     // client_id and client_secret comes from GitHub OAuth settings
-    await fetch(`https://github.com/login/oauth/access_token/?${process.env.GITHUB_OAUTH_CLIENT_ID}&${process.env.GITHUB_OAUTH_CLIENT_SECRET}&code=${req.query.code}`, {
+    console.log('id: ',process.env.GITHUB_OAUTH_CLIENT_ID,'secret: ', process.env.GITHUB_OAUTH_CLIENT_SECRET)
+    await fetch(`https://github.com/login/oauth/access_token/?client_id=${process.env.GITHUB_OAUTH_CLIENT_ID}&client_secret=${process.env.GITHUB_OAUTH_CLIENT_SECRET}&code=${req.query.code}`, {
       method: 'POST',
       // body: JSON.stringify({
       //   client_id: 'a3c7b7577fb915c09652',
@@ -23,7 +28,7 @@ accountController.handleOAuth = async (req, res, next) => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log('data', data)
+        console.log('oauth access key data ', data)
         const id = uuid();
         const query = `
           INSERT INTO user_sessions ("_id", "session_id")
@@ -34,7 +39,15 @@ accountController.handleOAuth = async (req, res, next) => {
             console.log('GitHub OAuth Data:\n', response.rows);
             return next();
           })
-          .catch(error => next(error))
+          .catch(error =>{
+            console.log('db error happened')
+            return next(error)
+
+          })
       })
-      .catch(err => console.error(err))
+      .catch(err => {
+        console.log('github access key error');
+        console.log(err);
+        return next(err);
+      })
 }
