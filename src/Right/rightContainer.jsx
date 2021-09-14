@@ -1,6 +1,6 @@
 import '../stylesheets/Dashboard.css';
 
-function Dashboard() {
+function RightContainer() {
   return (
     <div id="dashboard"> 
       <div> 
@@ -15,4 +15,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default RightContainer;
