@@ -1,8 +1,7 @@
-
 function AddButton() {
-    return (
-        <button>Add</button>
-    )
-}
+  return (
+    <button>Add</button>
+  )
+};
 
 export default AddButton;

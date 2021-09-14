@@ -7,10 +7,11 @@ import TreeButton from './TreeButton.jsx';
 function NavButtons() {
   return (
     <>
-    <PreviewButton />
-    <CanvasButton />
-    {/* <TreeButton /> */}
+      <PreviewButton />
+      <CanvasButton />
+      {/* <TreeButton /> */}
     </>
   )
-}
+};
+
 export default NavButtons;

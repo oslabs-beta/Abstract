@@ -1,7 +1,7 @@
 function Preview() {
-    return (
-        <p>Body - Preview</p>
-    )
-}
+  return (
+    <p>Body - Preview</p>
+  )
+};
 
 export default Preview;

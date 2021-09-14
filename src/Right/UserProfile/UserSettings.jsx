@@ -4,8 +4,8 @@ import Github from './Export/Github.jsx';
 function UserSettings() {
   return (
     <>
-    <BrowserSave/>
-    <Github/>
+      <BrowserSave/>
+      <Github/>
     </>
   )
 };

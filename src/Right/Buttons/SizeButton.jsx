@@ -5,8 +5,8 @@ import Phone from './Phone.jsx';
 function SizeButton() {
   return (
     <>
-    <Ipad/>
-    <Phone/>
+      <Ipad/>
+      <Phone/>
     </>
   )
 };

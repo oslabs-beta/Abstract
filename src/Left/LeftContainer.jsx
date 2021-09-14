@@ -5,8 +5,8 @@ import ComSettings from './ComSettings.jsx';
 function LeftContainer () {
   return (
     <>
-    <ComList />
-    <ComSettings />
+      <ComList />
+      <ComSettings />
     </>
     )
 };

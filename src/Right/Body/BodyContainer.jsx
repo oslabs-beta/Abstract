@@ -6,10 +6,10 @@ import Tree from './Tree.jsx';
 function BodyContainer() {
   return (
     <>
-    <Canvas/>
-    <Components/>
-    <Preview/>
-    {/* <Tree/> */}
+      <Canvas/>
+      <Components/>
+      <Preview/>
+      {/* <Tree/> */}
     </>
   )
 };

@@ -5,9 +5,9 @@ import BodyContainer from '../Body/BodyContainer.jsx';
 
 function rightContainer() {
   <>
-  <UserProfile></UserProfile>
-  <NavButtons></NavButtons>
-  <BodyContainer></BodyContainer>
+    <UserProfile></UserProfile>
+    <NavButtons></NavButtons>
+    <BodyContainer></BodyContainer>
   </>
 };
 
