@@ -1,9 +1,15 @@
-import AddButton from './AddButton.jsx'
+import AddButton from './AddButton.jsx';
+import { connect } from 'react-redux';
 
-function ComSettings() {
+const mapStateToProps = (state) => ({
+  selectedComponent: state.selectedComponent
+});
+
+
+function ComSettings(props) {
   return (
     <AddButton></AddButton>
   )
 };
 
-export default ComSettings;
+export default connect(mapStateToProps, null)(ComSettings);
