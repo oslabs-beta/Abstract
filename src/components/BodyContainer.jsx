@@ -1,13 +1,13 @@
 import Canvas from './Canvas.jsx';
-import Components from './Components.jsx';
+import CanvasComponents from './CanvasComponents.jsx';
 import Preview from './Preview.jsx';
-import Tree from './Tree.jsx';
+// import Tree from './Tree.jsx';
 
 function BodyContainer() {
   return (
     <>
       <Canvas/>
-      <Components/>
+      <CanvasComponents/>
       <Preview/>
       {/* <Tree/> */}
     </>

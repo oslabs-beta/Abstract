@@ -1,0 +1,33 @@
+body {
+  background-color: #282c34;;
+}
+
+#dashboard {
+  color: white;
+  /* margin: 0px; */
+  text-align: center;
+  font-size: 35px;
+}
+
+#gitProfileName {
+  background-color: rgb(163, 163, 163);
+  color: #282c34;
+  position: absolute;
+  right: 25px;
+  text-align: right;
+  width: 90px;
+  height: 40px;
+  text-align: center;
+  font-size: 22px;
+
+}
+
+#hexagon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-left: -400px;
+  top: -115px;
+}
+
+
