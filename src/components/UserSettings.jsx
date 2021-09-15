@@ -1,5 +1,5 @@
-import BrowserSave from './Export/BrowserSave.jsx';
-import Github from './Export/Github.jsx';
+import BrowserSave from './BrowserSave.jsx';
+import Github from './Github.jsx';
 
 function UserSettings() {
   return (
