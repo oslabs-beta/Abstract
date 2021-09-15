@@ -1,9 +1,9 @@
 import React from 'react';
 import UserProfile from './UserProfile/UserSettings.jsx';
 import NavButtons from './Buttons/NavButtons.jsx';
-import BodyContainer from '../Body/BodyContainer.jsx';
+import BodyContainer from './Body/BodyContainer.jsx';
 
-function rightContainer() {
+function RightContainer() {
   <>
     <UserProfile></UserProfile>
     <NavButtons></NavButtons>
@@ -11,4 +11,4 @@ function rightContainer() {
   </>
 };
 
-export default rightContainer;
+export default RightContainer;
