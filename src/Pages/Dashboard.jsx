@@ -6,6 +6,11 @@ import * as actions from '../actions/actions.js';
 import '../stylesheets/Login.css';
 import RightContainer from '../components/RightContainer';
 import ComponentMenu from '../components/ComponentMenu';
+import ExportCodeModal from '../components/ExportCodeModal';
+
+const mapStateToProps = (state) => ({
+  exportModal: state.main.exportModal
+})
 
 const mapDispatchToProps = (dispatch) => ({
   setUser: (username) => dispatch(actions.setUser(username)),
@@ -25,10 +30,13 @@ function Dashboard(props) {
   return (
       <>
         <h1>Dashboard</h1>
+        {
+          props.exportModal ? <ExportCodeModal/> : null
+        }
         <ComponentMenu></ComponentMenu>
         <RightContainer></RightContainer>
       </>
   )
 };
 
-export default connect(null, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
