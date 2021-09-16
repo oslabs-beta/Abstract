@@ -4,50 +4,102 @@
 import db from '../db/db.js';
 import fetch from 'node-fetch';
 import { v4 as uuid } from 'uuid';
+import jwt from 'jsonwebtoken';
 const accountController = {};
 export default accountController;
 
+// accountController.successfullOAuth = async (req, res, next) => {
+//   await fetch('https://api.github.com/user', {
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'token ' + res.local.access_token,
+//     }
+//   })
+//     .then((reponse) => {
+//       return next();
+//     })
+//     .catch((error) => {
+//       return next({
+//         status: 500,
+//         message: error
+//       });
+//     })
+// }
+
 accountController.handleOAuth = async (req, res, next) => {
-    // req.params
-    console.log('oauth req: ', req.query);
-    // client_id and client_secret comes from GitHub OAuth settings
-    console.log('id: ',process.env.GITHUB_OAUTH_CLIENT_ID,'secret: ', process.env.GITHUB_OAUTH_CLIENT_SECRET)
-    await fetch(`https://github.com/login/oauth/access_token/?client_id=${process.env.GITHUB_OAUTH_CLIENT_ID}&client_secret=${process.env.GITHUB_OAUTH_CLIENT_SECRET}&code=${req.query.code}`, {
+  // deconstruct req.query to get code from first Github GET request
+  const { code } = req.query;
+  // handle edge case if code is not provided
+  if (!code) {
+    throw new Error("Missing code from Github!");
+  }
+  
+  // once we get code back from Github, we need to make a POST to: https://github.com/login/oauth/access_token/
+  // make sure to pass in client_id, client_secret, and code
+  const accessToken = await fetch(`https://github.com/login/oauth/access_token/?client_id=${process.env.GITHUB_OAUTH_CLIENT_ID}&client_secret=${process.env.GITHUB_OAUTH_CLIENT_SECRET}&code=${code}`, {
       method: 'POST',
-      // body: JSON.stringify({
-      //   client_id: 'a3c7b7577fb915c09652',
-      //   client_secret: 'e91533c9980219dfe0e7bafa370b0b67cc25ca57',
-      //   code: req.query.code
-      //   // redirect_uri: 'http://localhost:3000/secret'
-      // }),
       headers: {
         'Accept': 'application/json',
+        // set scopes to allow access to more API endpoints (check Github docs)
         'X-OAuth-Scopes': 'user',
         'X-Accepted-OAuth-Scopes': 'user'
       }
     })
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
-        console.log('oauth access key data ', data)
-        const id = uuid();
-        const query = `
-          INSERT INTO user_sessions ("_id", "session_id")
-          VALUES ($1, $2);`;
-        const params = [id, data.access_token];
-        db.query(query, params)
-          .then(response => {
-            console.log('GitHub OAuth Data:\n', response.rows);
-            return next();
-          })
-          .catch(error =>{
-            console.log('db error happened')
-            return next(error)
-
-          })
+        // db query
+        // const id = uuid();
+        // const query = `
+        //   INSERT INTO user_sessions ("_id", "session_id")
+        //   VALUES ($1, $2);`;
+        // const params = [id, data.access_token];
+        // db.query(query, params)
+        //   .then(response => {
+        //     console.log('GitHub OAuth Data:\n', response.rows);
+        //     return next();
+        //   })
+        //   .catch(error => {
+        //     console.log('db error happened')
+        //     return next({
+        //       status: 500,
+        //       message: error
+        //     })
+        //   })
+        return data;
       })
-      .catch(err => {
+      .catch(error => {
         console.log('github access key error');
-        console.log(err);
-        return next(err);
+        console.log(error);
+        return next({
+          status: 500,
+          message: error
+        });
       })
+  
+  // use access token from POST request above to access user
+  console.log('accessToken', accessToken);
+  const userData = await fetch('https://api.github.com/user', {
+    method: 'GET',
+    // pass in access token into authorization header
+    headers: {
+      Authorization: `token ${accessToken.access_token}`
+    }
+  })
+    .then(response => response.json())
+    .then(data => data)
+    .catch(error => {
+      return next({
+        status: 500,
+        message: error
+      })
+    })
+  
+    // console.log('userData', userData);
+    const token = jwt.sign(JSON.stringify(userData), process.env.USER_JWT_SECRET)
+    // console.log('jwt token', token);
+    res.cookie("github-jwt", token, {
+      httpOnly: true,
+      secure: true
+    })
+    return res.redirect('http://localhost:3000/dashboard');
 }
