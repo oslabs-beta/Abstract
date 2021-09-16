@@ -16,15 +16,23 @@ const mapDispatchToProps = (dispatch) => ({
 
 function ComponentMenu (props) {
   // declaring library state to decide which dropdown (HTML, Bootstrap) to render
-  const [library, setLibrary] = useState('');
+  const [library, setLibrary] = useState('')
+  
+  // console.log(library);
+  // console.log('props:\n', props);
+  // console.log('toggleComponentMenu', props.toggleComponentMenu);
+
+  
 
   return (
     <>
       <button onClick={props.toggleComponentMenu}>Toggle Component</button>
-      <HTMLLibrary />
-      <BootstrapLibrary />
-      <ReactRouterLibrary />
+      
+      <button onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button><HTMLLibrary library={library}/>
+      <button onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button><BootstrapLibrary library={library}/>
+      <button onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button><ReactRouterLibrary library={library}/>
       <ComSettings />
+      
     </>
     )
 };

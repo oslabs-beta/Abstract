@@ -5,10 +5,12 @@ const mapDispatchToProps = (dispatch) => ({
   selectComponent: (component) => dispatch(actions.selectComponent(component))
 });
 
-function BootstrapComponent (props) {
+function BootstrapComponent( {name, key}) {
   return (
-    <h1> Bootstrap Components </h1>
+    <div> <button><img src='/logo192.png' alt='test'></img></button>
+      <p>{name}</p>
+    </div>
   );
-};
+}
 
 export default connect(null, mapDispatchToProps)(BootstrapComponent);
