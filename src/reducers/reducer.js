@@ -37,7 +37,10 @@ const reducer = (state = initialState, action) => {
       }
     }
     case types.SELECT_COMPONENT: {
-      return state;
+      return {
+        ...state,
+        selectedComponent: action.payload
+      };
     }
     default: {
       return state;

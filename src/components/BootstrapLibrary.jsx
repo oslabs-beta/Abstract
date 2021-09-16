@@ -1,13 +1,13 @@
 import BootstrapComponent from './BootstrapComponent';
 
 function BootstrapLibrary ( {library} ) {
-  const BootstrapComponents = [];
-  
-  if (library === 'BootstrapLibrary'){
-    for (let x = 0; x < 2; x++) {
-      BootstrapComponents.push(<BootstrapComponent key={x}/>)
+  let BootstrapComponents = []
+  let name = ['button', 'form', 'navbar', 'list']
+  if (library === 'BootstrapLibrary') {
+    for (let x = 0; x < name.length; x++){
+      BootstrapComponents.push(<BootstrapComponent key={x} name={name[x]}/>)
     }
-  }
+  };
   return (
     <div>
       {BootstrapComponents}

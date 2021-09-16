@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => ({
 function ReactRouterComponent() {
   return (
     <div>
-      <button><img src="/home/ray/Abstract/public/logo512.png"></img></button>
+      <button><img src="/logo192.png" alt='test'></img></button>
       <p>ReactRouter Component</p>
     </div>
   );
