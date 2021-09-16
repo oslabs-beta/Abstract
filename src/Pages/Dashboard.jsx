@@ -6,6 +6,8 @@ import * as actions from '../actions/actions.js';
 import '../stylesheets/Login.css';
 import RightContainer from '../components/RightContainer';
 import ComponentMenu from '../components/ComponentMenu';
+import ExportCodeMenu from '../components/ExportCodeMenu';
+
 
 const mapDispatchToProps = (dispatch) => ({
   setUser: (username) => dispatch(actions.setUser(username)),
@@ -25,6 +27,7 @@ function Dashboard(props) {
   return (
       <>
         <h1>Dashboard</h1>
+        <ExportCodeMenu/>
         <ComponentMenu></ComponentMenu>
         <RightContainer></RightContainer>
       </>
