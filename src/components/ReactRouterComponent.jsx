@@ -5,9 +5,13 @@ const mapDispatchToProps = (dispatch) => ({
   selectComponent: (component) => dispatch(actions.selectComponent(component))
 });
  
-function ReactRouterComponent (props) {
+
+function ReactRouterComponent() {
   return (
-    <h1> React-Router Component </h1>
+    <div>
+      <button><img src="/home/ray/Abstract/public/logo512.png"></img></button>
+      <p>ReactRouter Component</p>
+    </div>
   );
-};
+}
 export default connect (null, mapDispatchToProps)(ReactRouterComponent);

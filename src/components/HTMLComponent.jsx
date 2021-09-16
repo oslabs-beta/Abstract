@@ -5,9 +5,12 @@ const mapDispatchToProps = (dispatch) => ({
   selectComponent: (component) => dispatch(actions.selectComponent(component))
 });
 
-function HTMLComponent(props) {
+function HTMLComponent({ names }) {
   return (
-      <h1> HTML Component </h1>
+    <div>
+      <button><img src='/home/ray/Abstract/public/names'></img></button>
+      <p>Html Component</p>
+    </div>
   );
 }
 
