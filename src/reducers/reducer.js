@@ -27,6 +27,7 @@ const reducer = (state = initialState, action) => {
       return state;
     }
     case types.TOGGLE_COMPONENT_MENU: {
+      console.log('entered toggle component menu reducer');
       return state;
     }
     case types.SELECT_COMPONENT: {
