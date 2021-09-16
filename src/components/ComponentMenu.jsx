@@ -18,9 +18,6 @@ function ComponentMenu (props) {
   // declaring library state to decide which dropdown (HTML, Bootstrap) to render
   const [library, setLibrary] = useState('');
 
-  console.log('props:\n', props);
-  console.log('toggleCOmponentMenu', props.toggleComponentMenu);
-
   return (
     <>
       <button onClick={props.toggleComponentMenu}>Toggle Component</button>

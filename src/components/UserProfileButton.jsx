@@ -5,10 +5,11 @@ const mapStateToProps = (state) => ({
 });
 
 function UserProfileButton(props) {
+  console.log(' UserProfileButton props', props);
   return (
     <div> 
       <button id="gitProfileName"> 
-        <span> <b> {props.username ? props.username : "oakj"} </b> </span>
+        <span> <b> {props.username ? props.username : "user"} </b> </span>
       </button>
     </div>
   )
