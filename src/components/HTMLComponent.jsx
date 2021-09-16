@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
 
 const mapDispatchToProps = (dispatch) => ({
-  selectComponent: () => dispatch(actions.selectComponent)
+  selectComponent: (component) => dispatch(actions.selectComponent(component))
 });
 
 function HTMLComponent(props) {

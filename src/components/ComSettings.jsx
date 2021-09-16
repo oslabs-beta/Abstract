@@ -2,7 +2,7 @@ import AddButton from './AddButton.jsx';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
-  selectedComponent: state.selectedComponent
+  selectedComponent: state.main.selectedComponent
 });
 
 

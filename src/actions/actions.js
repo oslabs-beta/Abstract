@@ -31,10 +31,13 @@ export const toggleCanvasSize = (canvasSize) => ({
 })
 
 //action for TOGGLE_COMPONENT_MENU action type
-export const toggleComponentMenu = (componentMenu) => ({
-  type: types.TOGGLE_COMPONENT_MENU,
-  payload: componentMenu
-})
+export const toggleComponentMenu = (componentMenu) => {
+  console.log('entered toggle component menu action creator');
+  return {
+    type: types.TOGGLE_COMPONENT_MENU,
+    payload: componentMenu
+  }
+}
 
 //action for SELECT_COMPONENT action type
 export const selectComponent = (component) => ({

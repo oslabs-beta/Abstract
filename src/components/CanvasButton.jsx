@@ -1,15 +1,12 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleBodyView: () => dispatch(actions.toggleBodyView)
+  toggleBodyView: (bodyView) => dispatch(actions.toggleBodyView(bodyView))
 });
 
 function CanvasButton(props) {
-  // declaring state to toggle state of dropdown
-  const [dropdown, setDropdown] = useState(false);
-
   return (
     <button>Canvas</button>
   )

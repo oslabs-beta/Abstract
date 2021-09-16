@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
 
 const mapStateToProps = (state) => ({
-  bodyView: state.bodyView,
-  renderedComponents: state.renderedComponents,
-  canvasSize: state.canvasSize
+  bodyView: state.main.bodyView,
+  renderedComponents: state.main.renderedComponents,
+  canvasSize: state.main.canvasSize
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  selectComponent: () => dispatch(actions.selectComponent)
+  selectComponent: (component) => dispatch(actions.selectComponent(component))
 });
 
 function BodyContainer() {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
-  username: state.username
+  username: state.main.username
 });
 
 function UserProfileButton(props) {
