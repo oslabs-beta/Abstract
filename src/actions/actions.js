@@ -1,10 +1,12 @@
 import * as types from '../constants/actionTypes';
 
 // action for SET_ACTIVE_USER action type
-export const setUser = (username) => ({
-  type: types.SET_ACTIVE_USER,
-  payload: username
-});
+export const setUser = (username) => {
+  return  {
+    type: types.SET_ACTIVE_USER,
+    payload: username
+  }
+};
 
 // action for ADD_COMPONENT action type
 export const addComponent = (selectedComponent) => ({

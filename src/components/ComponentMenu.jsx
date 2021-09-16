@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 function ComponentMenu (props) {
   // declaring library state to decide which dropdown (HTML, Bootstrap) to render
+<<<<<<< HEAD
   const [library, setLibrary] = useState('')
   
   console.log(library);
@@ -23,6 +24,9 @@ function ComponentMenu (props) {
   console.log('toggleComponentMenu', props.toggleComponentMenu);
 
   
+=======
+  const [library, setLibrary] = useState('');
+>>>>>>> dev
 
   return (
     <>

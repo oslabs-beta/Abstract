@@ -12,7 +12,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_ACTIVE_USER: {
-      return state;
+      return {
+        ...state,
+        username: action.payload
+      };
     }
     case types.ADD_COMPONENT: {
       return state;
