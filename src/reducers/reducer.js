@@ -6,7 +6,8 @@ const initialState = {
   bodyView: "canvas", // canvas, code preview, export, component tree
   canvasSize: "iPad Pro", //iphone, ipad 
   componentMenu: true, //boolean
-  selectedComponent: "", 
+  selectedComponent: "",
+  exportModal: false // boolean
 };
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +36,12 @@ const reducer = (state = initialState, action) => {
     }
     case types.SELECT_COMPONENT: {
       return state;
+    }
+    case types.TOGGLE_EXPORT_MODAL: {
+      return {
+        ...state,
+        exportModal: action.payload
+      }
     }
     default: {
       return state;

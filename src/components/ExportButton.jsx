@@ -1,10 +1,20 @@
+import { connect } from 'react-redux';
 import { React } from 'react';
+import * as actions from '../actions/actions.js';
 
+const mapStateToProps = (state) => ({
+  exportModal: state.main.exportModal
+})
+
+// map dispatch toggle export modal
+const mapDispatchToProps = (dispatch) => ({
+  toggleExportModal: (toggle) => dispatch(actions.toggleExportModal(toggle))
+});
 
 function ExportButton(props) {
   return (
-    <button>Export</button>
+    <button onClick={() => props.toggleExportModal(!props.exportModal)}>Export</button>
   )
 };
 
-export default ExportButton;
+export default connect(mapStateToProps, mapDispatchToProps)(ExportButton);

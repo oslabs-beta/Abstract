@@ -47,7 +47,11 @@ export const selectComponent = (component) => ({
   payload: component
 })
 
-
+//action for TOGGLE EXPORT MODAL
+export const toggleExportModal = (toggle) => ({
+  type: types.TOGGLE_EXPORT_MODAL,
+  payload: toggle
+})
 
 
 // export const addCardActionCreator = marketId => ({
