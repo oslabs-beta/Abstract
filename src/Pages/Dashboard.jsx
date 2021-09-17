@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
-import '../stylesheets/Login.css';
+import '../stylesheets/Dashboard.css';
 import RightContainer from '../components/RightContainer';
 import ComponentMenu from '../components/ComponentMenu';
 import ExportCodeModal from '../components/ExportCodeModal';
@@ -31,7 +31,7 @@ function Dashboard(props) {
       <>
         <h1>Dashboard</h1>
         {
-          props.exportModal ? <ExportCodeModal/> : null
+          props.exportModal ? <ExportCodeModal /> : null
         }
         <ComponentMenu></ComponentMenu>
         <RightContainer></RightContainer>
