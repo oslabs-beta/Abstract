@@ -28,7 +28,11 @@ const reducer = (state = initialState, action) => {
       return state;
     }
     case types.TOGGLE_CANVAS_SIZE: {
-      return state;
+      console.log('toggle canvas size happened inside the reducer');
+      return {
+        ...state,
+        canvasSize: action.payload
+      };
     }
     case types.TOGGLE_COMPONENT_MENU: {
       console.log('entered toggle component menu reducer');
