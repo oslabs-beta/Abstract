@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
     }
     case types.TOGGLE_COMPONENT_MENU: {
       console.log('entered toggle component menu reducer');
-      return { 
+      return {
         ...state,
         componentMenu: !state.componentMenu,
       }
