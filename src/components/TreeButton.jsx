@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => ({
 // code preview button
 function TreeButton(props) {
   return (
-    <button>Tree</button>
+    <button onClick= {() => props.toggleBodyView('Component Tree')}>Tree</button>
   );
 };
 

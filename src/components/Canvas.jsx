@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import CanvasComponents from './CanvasComponents.jsx';
 
 const mapStateToProps = (state) => ({
   canvasSize: state.main.canvasSize
@@ -19,6 +20,7 @@ function Canvas(props) {
   return (
     <div id="canvas_backdrop" style={ { ...canvasStyle, backgroundColor: "red" } }>
       <h3>hello it me, canvas backdrop</h3>
+      <CanvasComponents/>
     </div>
   )
 };

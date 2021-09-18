@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => ({
 // code preview button
 function PreviewButton(props) {
   return (
-    <button>preview</button>
+    <button onClick= { () => props.toggleBodyView('Code Preview') }>preview</button>
   );
 };
 
