@@ -23,7 +23,7 @@ function ExportCodeModal ({ toggleExportModal, exportModal }) {
     <ExportModalBackdrop onClick={() => toggleExportModal(!exportModal)}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="modal orange-gradient"
+        className="abstract_modal orange-gradient"
         initial='hidden'
         animate='visible'
         exit='exit'
