@@ -8,7 +8,6 @@ import * as actions from '../actions/actions.js';
 const mapStateToProps = (state) => ({
   bodyView: state.main.bodyView,
   renderedComponents: state.main.renderedComponents,
-  canvasSize: state.main.canvasSize
 });
 
 const mapDispatchToProps = (dispatch) => ({
