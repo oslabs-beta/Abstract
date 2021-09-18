@@ -3,6 +3,7 @@ import UserSettings from './UserSettings.jsx';
 import NavButtons from './NavButtons.jsx';
 import BodyContainer from './BodyContainer.jsx';
 import UserProfileButton from './UserProfileButton.jsx';
+import SizeButton from './SizeButton.jsx';
 
 function RightContainer() {
   return (
@@ -13,6 +14,7 @@ function RightContainer() {
         {/* need to find image with no background */}
       </div>
       <UserProfileButton/>
+      <SizeButton/>
       <UserSettings></UserSettings>
       <NavButtons></NavButtons>
       <BodyContainer></BodyContainer>
