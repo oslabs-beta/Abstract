@@ -8,11 +8,11 @@ const mapDispatchToProps = (dispatch) => ({
 function HTMLComponent({ selectComponent, name, key }) {
   return (
     <div>
-      <button onClick={() => selectComponent('div')}><img src='/logo192.png' alt='test'></img></button>
+      <button onClick={() => selectComponent(name)}><img src='/logo192.png' alt='test'></img></button>
       <p>{name}</p> 
     </div>
   );
-}
+} 
 
 
 export default connect(null, mapDispatchToProps)(HTMLComponent);
