@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   username: "oakj",
   renderedComponents: [], 
-  bodyView: "canvas", // canvas, code preview, export, component tree
+  bodyView: "canvas", // canvas, code preview, component tree
   canvasSize: "iPad Pro", //iphone, ipad 
   componentMenu: true, //boolean
   selectedComponent: "",
@@ -25,7 +25,10 @@ const reducer = (state = initialState, action) => {
       return state;
     }
     case types.TOGGLE_BODY_VIEW: {
-      return state;
+      return {
+        ...state,
+        bodyView: action.payload
+      };
     }
     case types.TOGGLE_CANVAS_SIZE: {
       console.log('toggle canvas size happened inside the reducer');

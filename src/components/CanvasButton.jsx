@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 function CanvasButton(props) {
   return (
-    <button>Canvas</button>
+    <button onClick = {() => props.toggleBodyView('Canvas')} >Canvas</button>
   )
 };
 

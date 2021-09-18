@@ -1,6 +1,6 @@
 function Preview() {
   return (
-    <p>Body - Preview</p>
+    <p>Code Preview</p>
   )
 };
 
