@@ -1,10 +1,86 @@
-body {
+/* body {
   background-color: #282c34;;
+} */
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.modal {
+  width: clamp(50%, 800px, 90%);
+  height: min(50%, 700px);
+  margin: auto;
+  padding: 0 1rem 0 5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #c4c4c4;
+}
+
+#export_form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  /* top: -20px; */
+}
+
+#close_modal {
+  display: flex;
+  justify-content: right;
+  align-self: flex-end;
+  align-items: flex-end;
+  padding: 15px;
+  border: none;
+  background: none;
+  font-size: 2rem;
+}
+
+#export_form input {
+  width: 100%;
+}
+
+.export_form_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-self: flex-start;
+}
+
+.export_form_container h2,
+.export_form_container h3 {
+  margin: .5rem 0 .5rem 0;
+}
+
+.export_form_container input {
+  margin: .5rem 0 .5rem 0;
+  height: 1.25rem;
+}
+
+#submit_export_button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  
+}
+
+/*
 #dashboard {
   color: white;
-  /* margin: 0px; */
+  margin: 0px;
   text-align: center;
   font-size: 35px;
 }
@@ -29,3 +105,7 @@ body {
   margin-left: -400px;
   top: -115px;
 }
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> dev
