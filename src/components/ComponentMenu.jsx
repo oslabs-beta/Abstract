@@ -28,9 +28,9 @@ function ComponentMenu (props) {
     <>
       <button onClick={props.toggleComponentMenu}>Toggle Component</button>
       
-      <button onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button><HTMLLibrary library={library}/>
-      <button onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button><BootstrapLibrary library={library}/>
-      <button onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button><ReactRouterLibrary library={library}/>
+      <button onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
+      <button onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button> { library === 'BootstrapLibrary' ? <BootstrapLibrary /> : null }
+      <button onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button>{ library === 'ReactRouterLibrary' ? <ReactRouterLibrary /> : null }
       <ComSettings />
       
     </>

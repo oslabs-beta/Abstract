@@ -1,16 +1,15 @@
 import ReactRouterComponent from "./ReactRouterComponent";
 
-function ReactRouterLibrary ({ library }) {
-  let ReactRcomponents = [];
+function ReactRouterLibrary (props) {
+  let reactRcomponents = [];
  
-  if (library === 'ReactRouterLibrary'){
-    for (let x = 0; x < 2; x++) {
-    ReactRcomponents.push(<ReactRouterComponent key={x} />)
-    }
+  for (let x = 0; x < 2; x++) {
+  reactRcomponents.push(<ReactRouterComponent key={x} />)
   }
+  
   return (
     <div>
-      {ReactRcomponents}
+      {reactRcomponents}
     </div>
   )
 };
