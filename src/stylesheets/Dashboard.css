@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-.modal {
+.abstract_modal {
   width: clamp(50%, 800px, 90%);
   height: min(50%, 700px);
   margin: auto;
