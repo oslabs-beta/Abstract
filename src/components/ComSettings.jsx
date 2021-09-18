@@ -269,6 +269,8 @@ function ComSettings(props) {
                     </Form.Select>
                     <Form.Label>href</Form.Label>
                     <Form.Control type='href' placeholder='#home'/>
+                    <Form.Label>Navbar Brand Text</Form.Label>
+                    <Form.Control type='brand_text' placeholder='brand link'></Form.Control>
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
@@ -312,7 +314,8 @@ function ComSettings(props) {
               </>
             )
           }
-        } return (
+        } 
+        return (
           <>
             <DropdownButton id="dropdown-item-button" title='Select'>
               <Dropdown.Item as="button" onClick={() => setMethods('Navbar')}>Navbar</Dropdown.Item>
@@ -328,7 +331,7 @@ function ComSettings(props) {
           if (methods === 'Nav') {
             return (
               <>
-                <h2>Navbar.Collapse Component Settings</h2>
+                <h2>Nav Component Settings</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -337,6 +340,8 @@ function ComSettings(props) {
                     </Form.Select>
                     <Form.Label>Class Name</Form.Label>
                     <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
+                    <Form.Label>Nav Text</Form.Label>
+                    <Form.Control type='nav_text' placeholder='nav text'></Form.Control>
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
@@ -354,6 +359,8 @@ function ComSettings(props) {
                     </Form.Select>
                     <Form.Label>Class Name</Form.Label>
                     <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
+                    <Form.Label>href</Form.Label>
+                    <Form.Control type='href' placeholder='#home'/>
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
@@ -362,7 +369,7 @@ function ComSettings(props) {
           } else if (methods === 'Nav.DropDown') {
             return (
               <>
-                <h2>Navbar.Collapse Component Settings</h2>
+                <h2>Navbar.Dropdown Component Settings</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -371,27 +378,100 @@ function ComSettings(props) {
                     </Form.Select>
                     <Form.Label>Class Name</Form.Label>
                     <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
+                    <Form.Label>title</Form.Label>
+                    <Form.Control type='title' placeholder='Action'/>
+                  </Form.Group>
+              </Form>
+              <AddButton></AddButton>
+            </>
+            )
+          } else if (methods === 'Nav.DropDownItem') {
+            return (
+              <>
+                <h2>Navbar.DropdownItem Component Settings</h2>
+                <Form>
+                  <Form.Group>
+                    <Form.Label>Parent Component</Form.Label>
+                    <Form.Select>
+                      <option>1</option>
+                    </Form.Select>
+                    <Form.Label>Class Name</Form.Label>
+                    <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
+                    <Form.Label>href</Form.Label>
+
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
             </>
             )
           }
-        }  return (
+        } 
+        return (
           <>
             <DropdownButton id="dropdown-item-button" title='Select'>
               <Dropdown.Item as="button" onClick={() => setMethods('Nav')}>Nav</Dropdown.Item>
               <Dropdown.Item as="button" onClick={() => setMethods('Nav.Link')}>Nav.Link</Dropdown.Item>
               <Dropdown.Item as="button" onClick={() => setMethods('Nav.DropDown')}>Navbar.Toggle</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={() => setMethods('Nav.DropDownItem')}>Navbar.Toggle</Dropdown.Item>
             </DropdownButton>
             { renderNavSettings() }
           </>
         )
+      case 'list':
+        function renderListSettings() {
+          if (methods === 'List') {
+            return (
+              <>
+                <h2>List Component Settings</h2>
+                <Form>
+                  <Form.Group>
+                    <Form.Label>Parent Component</Form.Label>
+                    <Form.Select>
+                      <option>1</option>
+                    </Form.Select>
+                    <Form.Label>Class Name</Form.Label>
+                    <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
+                    <Form.Label>Nav Text</Form.Label>
+                    <Form.Control type='nav_text' placeholder='nav text'></Form.Control>
+                  </Form.Group>
+              </Form>
+              <AddButton></AddButton>
+            </>
+            )
+          } else if (methods === 'List.Group') {
+            return (
+              <>
+                <h2>List.Group Component Settings</h2>
+                <Form>
+                  <Form.Group>
+                    <Form.Label>Parent Component</Form.Label>
+                      <Form.Select>
+                        <option>1</option>
+                      </Form.Select>
+                      <Form.Label>Class Name</Form.Label>
+                      <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
+                  </Form.Group>
+                </Form>
+              </>
+            )
+          }
+        }   
+          return (
+            <>
+              <DropdownButton id="dropdown-item-button" title='Select'>
+                <Dropdown.Item as="button" onClick={() => setMethods('List')}>List</Dropdown.Item>
+                <Dropdown.Item as="button" onClick={() => setMethods('List.Group')}>List.Group</Dropdown.Item>
+
+              </DropdownButton>
+              { renderListSettings() }
+            </>
+          )
         default: 
         return (
         <>
         </>
       )
+      
   }
 }
 
