@@ -19,10 +19,18 @@ function BodyContainer(props) {
 
   const scope = { Form, Button, Navbar, Container, Nav, NavDropdown };
 
+  const code = `
+  render (
+    <>
+      ${props.prototypeCode}
+    </>
+  );
+  `;
+
   return (
     <>
       {props.bodyView}
-      <LiveProvider code={ props.prototypeCode } scope={scope} noInline={true}>
+      <LiveProvider code={code} scope={scope} noInline={true}>
         { props.bodyView === 'Code Preview' ? <Preview><LiveEditor /></Preview> : null }
         <LiveError />
         { props.bodyView === 'Canvas' ? <Canvas><LivePreview /></Canvas> : null }

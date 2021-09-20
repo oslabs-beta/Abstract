@@ -9,17 +9,7 @@ const initialState = {
   selectedComponent: "",
   exportModal: false, // boolean
   // prototype code is used as an input to React-Live inside BodyContainer and as export code to Github
-  prototypeCode: `  
-  const TestButton = () => (
-    <button style={{ color: 'palevioletred' }}>
-      Hello World!
-    </button>
-  )
-  
-  render(
-    <TestButton/>
-  )
-  `,
+  prototypeCode: ``,
 };
 
 const reducer = (state = initialState, action) => {
@@ -31,7 +21,11 @@ const reducer = (state = initialState, action) => {
       };
     }
     case types.ADD_COMPONENT: {
-      return state;
+      console.log('ADD COMPONENT reducer is hit');
+      return {
+        ...state,
+        prototypeCode: state.prototypeCode + action.payload
+      };
     }
     case types.DELETE_COMPONENT: {
       return state;
