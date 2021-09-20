@@ -18,7 +18,7 @@ function Canvas({ children, ...props }) {
   }, [props.canvasSize])
 
   return (
-    <div id="canvas_backdrop" style={ { ...canvasStyle, backgroundColor: "red" } }>
+    <div id="canvas_backdrop" style={ { ...canvasStyle, backgroundColor: "white", borderStyle: "solid" } }>
       {/* <CanvasComponents/> */}
       { children }
     </div>
