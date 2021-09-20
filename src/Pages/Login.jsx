@@ -83,7 +83,6 @@ function Login(props) {
   render(
     <StyleWrapper>
       <Form />
-      <Button />
     </StyleWrapper>
   )
   `;
