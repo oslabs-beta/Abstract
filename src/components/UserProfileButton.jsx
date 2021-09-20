@@ -10,7 +10,7 @@ function UserProfileButton(props) {
   const [dropdown, setDropdown] = useState(false);
 
   function handleDropdown() {
-    console.log('dropdown onclick happens');
+    // console.log('dropdown onclick happens');
     setDropdown(!dropdown);
   }
 

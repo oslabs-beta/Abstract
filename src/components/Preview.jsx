@@ -36,4 +36,6 @@ function Preview(props) {
   )
 };
 
-export default connect(mapStateToProps, null)(Preview);
+export default connect(mapStateToProps, null)(Preview)
+
+
