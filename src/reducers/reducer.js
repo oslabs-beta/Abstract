@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   username: "oakj",
   renderedComponents: [], 
-  bodyView: "canvas", // canvas, code preview, component tree
+  bodyView: "Canvas", // Canvas, Code Preview
   canvasSize: "iPad Pro", //iphone, ipad 
   componentMenu: true, //boolean
   selectedComponent: "",
