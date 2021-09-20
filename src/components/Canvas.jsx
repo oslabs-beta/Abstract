@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import CanvasComponents from './CanvasComponents.jsx';
+// import CanvasComponents from './CanvasComponents.jsx';
 
 const mapStateToProps = (state) => ({
   canvasSize: state.main.canvasSize
 });
 
-function Canvas(props) {
+function Canvas({ children, ...props }) {
   const [canvasStyle, setCanvasStyle] = useState({ width: '683px', height: '512px' });
 
   useEffect(() => {
@@ -18,9 +18,9 @@ function Canvas(props) {
   }, [props.canvasSize])
 
   return (
-    <div id="canvas_backdrop" style={ { ...canvasStyle, backgroundColor: "red" } }>
-      <h3>hello it me, canvas backdrop</h3>
-      <CanvasComponents/>
+    <div id="canvas_backdrop" style={ { ...canvasStyle, backgroundColor: "white", borderStyle: "solid" } }>
+      {/* <CanvasComponents/> */}
+      { children }
     </div>
   )
 };

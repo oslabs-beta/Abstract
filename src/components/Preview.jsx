@@ -1,6 +1,8 @@
-function Preview() {
+function Preview({ children }) {
   return (
-    <p>Code Preview</p>
+    <>
+      { children }
+    </>
   )
 };
 

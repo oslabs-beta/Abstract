@@ -3,11 +3,23 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   username: "oakj",
   renderedComponents: [], 
-  bodyView: "canvas", // canvas, code preview, component tree
+  bodyView: "Canvas", // Canvas, Code Preview
   canvasSize: "iPad Pro", //iphone, ipad 
   componentMenu: true, //boolean
   selectedComponent: "",
-  exportModal: false // boolean
+  exportModal: false, // boolean
+  // prototype code is used as an input to React-Live inside BodyContainer and as export code to Github
+  prototypeCode: `  
+  const TestButton = () => (
+    <button style={{ color: 'palevioletred' }}>
+      Hello World!
+    </button>
+  )
+  
+  render(
+    <TestButton/>
+  )
+  `,
 };
 
 const reducer = (state = initialState, action) => {

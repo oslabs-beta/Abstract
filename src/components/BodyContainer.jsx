@@ -1,12 +1,14 @@
-import Canvas from './Canvas.jsx';
-import Preview from './Preview.jsx';
-// import Tree from './Tree.jsx';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
+import Canvas from './Canvas.jsx';
+import Preview from './Preview.jsx';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import { Form, Button, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 const mapStateToProps = (state) => ({
   bodyView: state.main.bodyView,
   renderedComponents: state.main.renderedComponents,
+  prototypeCode: state.main.prototypeCode
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -14,13 +16,17 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 function BodyContainer(props) {
+
+  const scope = { Form, Button, Navbar, Container, Nav, NavDropdown };
+
   return (
     <>
       {props.bodyView}
-      {
-        props.bodyView === 'Canvas' ? <Canvas/> : <Preview/>
-      }
-      {/* <Tree/> */}
+      <LiveProvider code={ props.prototypeCode } scope={scope} noInline={true}>
+        { props.bodyView === 'Code Preview' ? <Preview><LiveEditor /></Preview> : null }
+        <LiveError />
+        { props.bodyView === 'Canvas' ? <Canvas><LivePreview /></Canvas> : null }
+      </LiveProvider>
     </>
   )
 };
