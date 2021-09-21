@@ -74,12 +74,7 @@
   
 }
 
-<<<<<<< HEAD
-
-/*
-=======
 /* Dashboard Styling */
->>>>>>> dev
 #dashboard {
   display: grid;
   grid-template-columns: 1fr 3fr;
