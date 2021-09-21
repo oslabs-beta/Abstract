@@ -25,7 +25,8 @@ function ComponentMenu (props) {
   
 
   return (
-    <>
+    <div id="component_menu">
+      <h3>Component Menu</h3>
       <button onClick={props.toggleComponentMenu}>Toggle Component</button>
       {
         props.componentMenu ?
@@ -37,7 +38,7 @@ function ComponentMenu (props) {
           </>
         : null
       }
-    </>
+    </div>
     )
 };
 

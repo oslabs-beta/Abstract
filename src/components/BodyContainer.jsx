@@ -28,14 +28,14 @@ function BodyContainer(props) {
   `;
 
   return (
-    <>
-      {props.bodyView}
+    <div id="body_container">
+      <div style={{ color: "#FFFFFF" }}>{props.bodyView}</div>
       <LiveProvider code={code} scope={scope} noInline={true}>
         { props.bodyView === 'Code Preview' ? <Preview><LiveEditor /></Preview> : null }
         <LiveError />
         { props.bodyView === 'Canvas' ? <Canvas><LivePreview /></Canvas> : null }
       </LiveProvider>
-    </>
+    </div>
   )
 };
 
