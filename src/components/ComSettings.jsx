@@ -475,40 +475,5 @@ function ComSettings(props) {
   }
 }
 
-{/* BootstrapElements
-    navbar
-    - Navbar.Brand
-    - Navbar.toggle
-    - navbar.collapse
-
-    Nav
-      - nav.link
-      - NavDropDown
-      - NavDropdown.Item
-
-      method*
-      parent component
-      class
-      id
-      fixed
-      sticky
-      on toggle
-      on select
-      variant
-      href
-      background
-      expand
-      collapse
-    list
-      method*
-      parent component  
-      variant
-      class name
-      event key
-      action
-*/}
-
   
-
 export default connect(mapStateToProps, null)(ComSettings);
-

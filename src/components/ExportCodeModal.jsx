@@ -2,21 +2,51 @@ import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import * as actions from '../actions/actions.js';
 import ExportModalBackdrop from "./ExportModalBackdrop";
+// import fetch from 'node-fetch';
 
 const mapStateToProps = (state) => ({
-  exportModal: state.main.exportModal
+  exportModal: state.main.exportModal,
+  prototypeCode: state.main.prototypeCode,
+  username: state.main.username
 })
 
 const mapDispatchToProps = (dispatch) => ({
   toggleExportModal: (toggle) => dispatch(actions.toggleExportModal(toggle))
 });
 
-function ExportCodeModal ({ toggleExportModal, exportModal }) {
+function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // make fetch request to server to make request to Github API
-    // need to include access_token and userData jwts
+    const { repository_name, commit_message } = e.target.elements
+   
+    // create github repo
+    await fetch('/export', {
+      method: 'POST',
+      mode: 'cors',
+      body: 
+      JSON.stringify({
+        "prototypeCode": props.prototypeCode,
+        "repository_name": repository_name.value,
+        "commit_message": commit_message.value,
+        "username": props.username,
+      }),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+  
+    })
+      .then(response => {
+        console.log('reached here')
+        return response.json()
+      })
+        .then(data => {
+        console.log('second.then: ', data)
+        return data
+      }
+      )
+      .catch(err => console.log('err: ', err))
   }
 
   return (
@@ -38,7 +68,7 @@ function ExportCodeModal ({ toggleExportModal, exportModal }) {
             <label htmlFor="commit_message">Commit Message:</label>
             <input type="text" id="commit_message" name="commit_message" placeholder="Enter a commit message."></input>
 
-            <button id="submit_export_button">Export to Github</button>
+            <button id="submit_export_button" type="submit">Export to Github</button>
           </form>
         </div>
       </motion.div>

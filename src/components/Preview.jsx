@@ -1,3 +1,5 @@
+
+
 function Preview({ children }) {
   return (
     <div id="code_preview">
@@ -6,4 +8,6 @@ function Preview({ children }) {
   )
 };
 
-export default Preview;
+export default Preview
+
+

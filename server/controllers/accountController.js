@@ -2,8 +2,11 @@ import db from '../db/db.js';
 import fetch from 'node-fetch';
 import { v4 as uuid } from 'uuid';
 import jwt from 'jsonwebtoken';
+import { Octokit } from "@octokit/core";
+import jwt_decode from 'jwt-decode';
+import { request } from '@octokit/request';
 const accountController = {};
-export default accountController;
+
 
 // accountController.successfullOAuth = async (req, res, next) => {
 //   await fetch('https://api.github.com/user', {
@@ -38,8 +41,8 @@ accountController.handleOAuth = async (req, res, next) => {
       headers: {
         'Accept': 'application/json',
         // set scopes to allow access to more API endpoints (check Github docs)
-        'X-OAuth-Scopes': 'user',
-        'X-Accepted-OAuth-Scopes': 'user'
+        // 'X-OAuth-Scopes': ['user', 'repo'],
+        // 'X-Accepted-OAuth-Scopes': ['user', 'repo']
       }
     })
       .then(response => response.json())
@@ -72,9 +75,18 @@ accountController.handleOAuth = async (req, res, next) => {
           message: error
         });
       })
-  
+
   // store access token in a jwt cookie to send back to server on Github API request
+  // const octokit = new Octokit({auth: accessToken})
+  // const result = await octokit.request('GET /repos/{owner}/{repo}/hooks', {
+  //   owner: 'rhu0',
+  //   repo: 'hack-hour-la-45'
+  // })
+  // console.log(result)
+
+
   const token = jwt.sign(JSON.stringify(accessToken), process.env.USER_JWT_SECRET)
+  // console.log('token: ', token)
   res.cookie("github-token-jwt", token, {
     httpOnly: true,
     secure: true
@@ -108,3 +120,31 @@ accountController.handleOAuth = async (req, res, next) => {
     // redirect to dashboard with the username as a query paramater (to modify Redux store)
     return res.redirect(`http://localhost:3000/dashboard/username=${userData.login}`);
 }
+accountController.createRepo = async (req, res, next) => {
+
+  try {
+  // console.log('reached createRepo')
+  const cookie = req.cookies["github-token-jwt"]
+    const decodedCookie = jwt_decode(cookie).access_token
+    console.log('decoded cookie :', decodedCookie)
+
+  //get access token for octokit
+ 
+  const username = req.body.username
+  const repo_name = req.body.repository_name
+  console.log('repo: ',`${repo_name}`)
+  const octokit = new Octokit({ auth: `${decodedCookie}` });
+  //POST to github API
+  const response = await octokit.request(`POST /user/repos`, {
+      name: `${repo_name}`,
+      private: true
+  });
+
+
+  console.log('Post request: ', response)
+  return next();
+  } catch (e) {
+    console.log('catch: ', e)
+  }
+}
+export default accountController;
