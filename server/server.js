@@ -44,8 +44,14 @@ accountController.handleOAuth);
 app.post('/export', 
 // create repo middleware
   accountController.createRepo, 
-  (res, req) => {
-    return res.status(200)  
+  (req, res) => {
+    return res.sendStatus(200)  
+  }
+)
+app.put('/export', 
+  accountController.updateRepo,
+  (req, res) => {
+    return res.sendStatus(200)
   }
 )
 
