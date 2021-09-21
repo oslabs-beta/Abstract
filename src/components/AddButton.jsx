@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
 
 const mapDispatchToProps = (dispatch) => ({
-  addComponent: () => dispatch(actions.addComponent)
+  addComponent: (component) => dispatch(actions.addComponent(component))
 });
 
-function AddButton(props) {
+function AddButton({ addComponent, component }) {
   return (
-    <button>Add</button>
+    <button onClick={() => addComponent(component)}>Add</button>
   )
 };
 

@@ -11,9 +11,9 @@ function Canvas({ children, ...props }) {
 
   useEffect(() => {
     if (props.canvasSize === 'iPad Pro') {
-      setCanvasStyle({ width: '683px', height: '512px' })
+      setCanvasStyle({ width: '512px', height: '683px' })
     } else if (props.canvasSize === 'iPhone X') {
-      setCanvasStyle({ width: '406px', height: '187.5px' })
+      setCanvasStyle({ width: '375px', height: '812px' })
     }
   }, [props.canvasSize])
 

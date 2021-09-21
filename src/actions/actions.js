@@ -1,4 +1,5 @@
 import * as types from '../constants/actionTypes';
+import * as componentTypes from '../constants/componentTypes';
 
 // action for SET_ACTIVE_USER action type
 export const setUser = (username) => {
@@ -9,10 +10,23 @@ export const setUser = (username) => {
 };
 
 // action for ADD_COMPONENT action type
-export const addComponent = (selectedComponent) => ({
-  type: types.ADD_COMPONENT,
-  payload: selectedComponent
-});
+export const addComponent = (selectedComponent) => {
+  // if selectedComponent === "Form", assign payload to componentTypes.Form
+  console.log('ADD COMPONENT action is hit');
+  if (selectedComponent === "form"){
+    return {
+      type: types.ADD_COMPONENT,
+      payload: componentTypes.form
+    }
+  }
+
+  if (selectedComponent === "button") {
+    return {
+      type: types.ADD_COMPONENT,
+      payload: componentTypes.button
+    }
+  }
+};
 
 //action for DELETE_COMPONENT action type
 export const deleteComponent = (selectedComponent) => ({
