@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import { Octokit } from "@octokit/core";
 import jwt_decode from 'jwt-decode';
 import { request } from '@octokit/request';
+import { Buffer } from 'buffer';
 const accountController = {};
 
 
@@ -129,22 +130,55 @@ accountController.createRepo = async (req, res, next) => {
     console.log('decoded cookie :', decodedCookie)
 
   //get access token for octokit
- 
-  const username = req.body.username
-  const repo_name = req.body.repository_name
+  const repo_name = req.body.repository_name;
+
   console.log('repo: ',`${repo_name}`)
   const octokit = new Octokit({ auth: `${decodedCookie}` });
-  //POST to github API
-  const response = await octokit.request(`POST /user/repos`, {
-      name: `${repo_name}`,
-      private: true
+  
+  //Create repo with github API
+  const createResponse = await octokit.request(`POST /user/repos`, {
+    name: `${repo_name}`,
+    private: true,
+    auto_init: true,
   });
-
-
-  console.log('Post request: ', response)
+  console.log('Finished post req')
   return next();
-  } catch (e) {
+}
+ catch (e) {
+  console.log('catch: ', e)
+  }
+}
+
+accountController.updateRepo = async (req, res, next) => {
+  //update repo with files
+  console.log('got to update Repo')
+  try {
+    const username = req.body.username;
+    const commit_msg = req.body.commit_message;
+    const repo_name = req.body.repository_name;
+
+    const cookie = req.cookies["github-token-jwt"]
+    const decodedCookie = jwt_decode(cookie).access_token
+    // console.log('decoded cookie :', decodedCookie)
+
+    // console.log('repo: ',`${repo_name}`)
+    const octokit = new Octokit({ auth: `${decodedCookie}` });
+    console.log('we better be getting this: ', req.body.prototypeCode)
+    const prototypeCode = Buffer.from(`${req.body.prototypeCode}`, 'binary').toString('base64');
+    console.log('base64: ', prototypeCode)
+    const updateResponse = await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+      owner: `${username}`,
+      repo: `${repo_name}`,
+      message: `${commit_msg}`,
+      content: `${prototypeCode}`,
+      path: `App.jsx`,
+    })
+    return next();
+  }
+  catch(e) {
     console.log('catch: ', e)
   }
 }
+
+
 export default accountController;

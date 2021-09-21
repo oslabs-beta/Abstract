@@ -21,33 +21,41 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
     const { repository_name, commit_message } = e.target.elements
    
     // create github repo
-    await fetch('/export', {
+    const createRepo = await fetch('/export', {
       method: 'POST',
       mode: 'cors',
-      body: 
-      JSON.stringify({
-        "prototypeCode": props.prototypeCode,
+      body: JSON.stringify({
         "repository_name": repository_name.value,
-        "commit_message": commit_message.value,
-        "username": props.username,
       }),
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
-    },
-  
+      },
     })
-      .then(response => {
-        console.log('reached here')
-        return response.json()
+    .then(response => response.json())
+
+    //update files
+    console.log('proto code: ', props.prototypeCode)
+    const updateRepo = await fetch('/export', {
+        method: 'PUT',
+        mode: 'cors',
+        body: JSON.stringify({
+          "prototypeCode": props.prototypeCode,
+          "repository_name": repository_name.value,
+          "commit_message": commit_message.value,
+          "username": props.username,
+        }),
+        headers: { 
+          'Accept' : 'application/json',
+          'Content-Type': 'application/json' }
       })
-        .then(data => {
-        console.log('second.then: ', data)
-        return data
-      }
-      )
-      .catch(err => console.log('err: ', err))
-  }
+      .then(response => response.json())
+      .then(data => data)
+      .then(toggleExportModal(!exportModal))
+      .then(alert('Code successfully exported! Please check your Github repos.'))
+      .catch(e => console.log('err: ', e))  
+    }
+    // })
 
   return (
     <ExportModalBackdrop onClick={() => toggleExportModal(!exportModal)}>

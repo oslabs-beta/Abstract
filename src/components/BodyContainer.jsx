@@ -32,7 +32,7 @@ function BodyContainer(props) {
       <div style={{ color: "#FFFFFF", marginBottom: "24px" }}>{props.bodyView}</div>
       <LiveProvider code={code} scope={scope} noInline={true}>
         { props.bodyView === 'Code Preview' ? <Preview><LiveEditor /></Preview> : null }
-        <LiveError />
+        <div style={{ backgroundColor: "white" }}><LiveError /></div>
         { props.bodyView === 'Canvas' ? <Canvas><LivePreview /></Canvas> : null }
       </LiveProvider>
     </div>
