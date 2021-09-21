@@ -111,7 +111,7 @@ function ComSettings(props) {
               <Form.Control type='font_size'></Form.Control>
             </Form.Group>
             </Form>
-          <AddButton></AddButton>
+          <AddButton component="button"></AddButton>
         </>
       )
     case 'form':
@@ -194,7 +194,7 @@ function ComSettings(props) {
                   </Form.Select>
                 </Form.Group>
               </Form>
-              <AddButton></AddButton>
+              <AddButton component="form"></AddButton>
             </>
             )
           }

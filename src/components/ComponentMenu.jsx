@@ -25,15 +25,20 @@ function ComponentMenu (props) {
   
 
   return (
-    <>
+    <div id="component_menu">
+      <h3>Component Menu</h3>
       <button onClick={props.toggleComponentMenu}>Toggle Component</button>
-      
-      <button onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
-      <button onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button> { library === 'BootstrapLibrary' ? <BootstrapLibrary /> : null }
-      <button onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button>{ library === 'ReactRouterLibrary' ? <ReactRouterLibrary /> : null }
-      <ComSettings />
-      
-    </>
+      {
+        props.componentMenu ?
+          <>
+            <button onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
+            <button onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button> { library === 'BootstrapLibrary' ? <BootstrapLibrary /> : null }
+            <button onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button>{ library === 'ReactRouterLibrary' ? <ReactRouterLibrary /> : null }
+            <ComSettings />
+          </>
+        : null
+      }
+    </div>
     )
 };
 

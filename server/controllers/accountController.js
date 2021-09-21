@@ -121,9 +121,7 @@ accountController.handleOAuth = async (req, res, next) => {
     return res.redirect(`http://localhost:3000/dashboard/username=${userData.login}`);
 }
 accountController.createRepo = async (req, res, next) => {
-  //parse cookies
-  //get jwt 
-  //decode jwt
+
   try {
   // console.log('reached createRepo')
   const cookie = req.cookies["github-token-jwt"]
@@ -131,22 +129,18 @@ accountController.createRepo = async (req, res, next) => {
     console.log('decoded cookie :', decodedCookie)
 
   //get access token for octokit
-  // console.log(req.body)
-  // console.log('test: ', Object.keys(req.body))
-  // console.log('request body: ', req.body)
+ 
   const username = req.body.username
   const repo_name = req.body.repository_name
   console.log('repo: ',`${repo_name}`)
   const octokit = new Octokit({ auth: `${decodedCookie}` });
-  
+  //POST to github API
   const response = await octokit.request(`POST /user/repos`, {
       name: `${repo_name}`,
       private: true
   });
 
-  // const getreq = await octokit.request('GET /users/{username}/repos', {
-  //   username: "rhu0"
-  // })
+
   console.log('Post request: ', response)
   return next();
   } catch (e) {

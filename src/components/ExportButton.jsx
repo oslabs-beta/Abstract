@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 function ExportButton(props) {
   return (
-    <button onClick={() => props.toggleExportModal(!props.exportModal)}>Export</button>
+    <button id="export_modal_button" onClick={() => { props.handleDropdown(); props.toggleExportModal(!props.exportModal) }}>Export</button>
   )
 };
 

@@ -7,7 +7,6 @@ export const TOGGLE_COMPONENT_MENU = 'TOGGLE_COMPONENT_MENU';
 export const SELECT_COMPONENT = 'SELECT_COMPONENT';
 export const TOGGLE_EXPORT_MODAL = 'TOGGLE_EXPORT_MODAL';
 
-
 // States to add to react
 // add toggle canvas size dropdown state to toggle canvas size button
 // add state for each component library to component menu

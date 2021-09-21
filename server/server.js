@@ -45,16 +45,12 @@ app.post('/export',
 // create repo middleware
   accountController.createRepo, 
   (res, req) => {
-    return res.status(200)
-}
+    return res.status(200)  
+  }
 )
 
 //github api submit files to existing repo
-//app.put('/export', send repo file middleware)
-// const octokit = new Octokit({auth: accessToken})
-// await octokit.request('POST /user/repos', {
-//   name: 'name'
-// })
+
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Page not Found'));

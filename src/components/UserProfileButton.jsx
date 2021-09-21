@@ -15,12 +15,12 @@ function UserProfileButton(props) {
   }
 
   return (
-    <div> 
-      <button id="gitProfileName" onClick={handleDropdown} > 
+    <div id="profile_button"> 
+      <button onClick={handleDropdown} > 
         <span> <b> {props.username ? props.username : "user"} </b> </span>
       </button>
       {
-        dropdown ? <ExportButton/> : null
+        dropdown ? <ExportButton handleDropdown={handleDropdown}/> : null
       }
     </div>
   )

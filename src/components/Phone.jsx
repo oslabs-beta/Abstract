@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => ({
 function Phone(props) {
   return (
     // when clicked, change cavas size to 812 x 375 scaled to 50% to fit screen
-    <button onClick={() => props.toggleCanvasSize('iPhone X')}>PHONE</button>
+    <button onClick={() => { props.setDropdown(false); props.toggleCanvasSize('iPhone X') }}>PHONE</button>
   );
 };
 

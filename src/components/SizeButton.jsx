@@ -7,19 +7,19 @@ function SizeButton(props) {
 const [dropdown, setDropdown] = useState(false);
 
   return(
-    <>
+    <div id="size_button">
       <button onClick={() => setDropdown(!dropdown)}>CanvasSize</button>
       {
         // if dropdown is true, render IPad component and Phone component
         dropdown ? 
           <>
-            <Ipad/>
-            <Phone/>
+            <Ipad setDropdown={setDropdown}/>
+            <Phone setDropdown={setDropdown}/>
           </>
         :
           null
       }
-    </>
+    </div>
   )
 };
 

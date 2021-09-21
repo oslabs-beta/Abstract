@@ -1,40 +1,60 @@
 .App {
   text-align: center;
+  background-color: #303030;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#Abstract {
+  color: white;
+  position: relative;
+  bottom: -30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#abstractLogo {
+  opacity: 100%;
+  width: 50px;
+  height: 50px;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: calc(6px + 2vmin);
+  color: black;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#welcomeBorderBox {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 4px;
+  background-color: #c8c6c6;
+  width: 40%;
+  padding: 70px;;  
+}
+
+#frontPageLogInButton {
+  /* background-color: white;
+  height: 10px; */
+  border-radius: 5px;
+  font-size: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+#frontPageSignUpButton {
+  /* background-color: white; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+}
+
+#frontPageSignUpButton:hover {
+  background-color: rgb(216, 213, 213); 
+  color: white;
 }
 
 #logIn {
@@ -42,55 +62,17 @@
   width: 270px;
   height: 70px;
   font-size: 30px;
-  word-wrap: break-word;
-  animation: forwards; 
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite;  
-
-}
-@-webkit-keyframes glowing {
-  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  word-wrap: break-word; 
 }
 
-@-moz-keyframes glowing {
-  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-}
-
-@-o-keyframes glowing {
-  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
-
-@keyframes glowing {
-  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
 #githubLogo {
+  /* display: flex; */
+  flex-direction: row-reverse;
   align-items: center;
   align-self: center;
   align-content: center;
-  border: 0;
-  float: left;
-  width: 60px;
-  height: 60px;
-}
-
-#SignUpBtn {
-  border-radius: 15px;
-  width: 150px;
-  height: 40px;
-  font-size: 20px;
-  background-color: #B20000;
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite; 
+  width: 70px;
+  height: 70px;
+  background: none;
+  background-color: none;
 }

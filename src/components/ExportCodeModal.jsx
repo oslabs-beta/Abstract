@@ -19,13 +19,10 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const { repository_name, commit_message } = e.target.elements
-    // console.log(repository_name.value)
+   
     // create github repo
-    // console.log('prototypeCode: ', props.prototypeCode)
-    // console.log('username: ',props.username)
     await fetch('/export', {
       method: 'POST',
-      // credentials: 'include',
       mode: 'cors',
       body: 
       JSON.stringify({
@@ -38,8 +35,6 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
     },
-    //x-www-form-urlencoded
-    //multipart/form-data
   
     })
       .then(response => {
@@ -52,8 +47,6 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
       }
       )
       .catch(err => console.log('err: ', err))
-    // make fetch request to server to make request to Github API
-    // need to include access_token and userData jwts
   }
 
   return (

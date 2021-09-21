@@ -29,12 +29,13 @@ function Dashboard(props) {
 
   return (
       <>
-        <h1>Dashboard</h1>
         {
           props.exportModal ? <ExportCodeModal /> : null
         }
-        <ComponentMenu></ComponentMenu>
-        <RightContainer></RightContainer>
+        <div id="dashboard">
+          <ComponentMenu></ComponentMenu>
+          <RightContainer></RightContainer>
+        </div>
       </>
   )
 };
