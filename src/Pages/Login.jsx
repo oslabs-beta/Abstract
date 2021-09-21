@@ -11,7 +11,7 @@ function Login() {
           <h1> Please log in via Github. </h1>
         </div>
       
-        <a href='https://github.com/login/oauth/authorize?client_id=46fc52b044a6de2f4a82&scope=read:user&redirect_uri=http://localhost:5000/oauth'> <button> Log In with Github </button> </a>
+        <a href='https://github.com/login/oauth/authorize?client_id=46fc52b044a6de2f4a82&scope=read:user%20repo%20admin:repo_hook&redirect_uri=http://localhost:5000/oauth'> <button> Log In with Github </button> </a>
 
         <h3> Don't have a Github account? </h3>
 

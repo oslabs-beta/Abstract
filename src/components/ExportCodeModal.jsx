@@ -2,32 +2,56 @@ import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import * as actions from '../actions/actions.js';
 import ExportModalBackdrop from "./ExportModalBackdrop";
-// import { code } from "./Preview"
+// import fetch from 'node-fetch';
+
 const mapStateToProps = (state) => ({
-  exportModal: state.main.exportModal
+  exportModal: state.main.exportModal,
+  prototypeCode: state.main.prototypeCode,
+  username: state.main.username
 })
 
 const mapDispatchToProps = (dispatch) => ({
   toggleExportModal: (toggle) => dispatch(actions.toggleExportModal(toggle))
 });
 
-function ExportCodeModal ({ toggleExportModal, exportModal }) {
+function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // console.log(document.getElementById('repository_name').value)
-    // console.log(document.getElementById('commit_message').value)
-    // console.log(document.getElementById(''))
-    // console.log('target', e.target.elements.repository_name.value)
-    // const val = e.target.elements
-    // console.log(val.repository_name.value)
-    // console.log(val.commit_message.value)
-    const { repoName, commit_message } = e.target.elements
-    console.log(repoName.value)
-    // const { repoName, commitMsg } = e.target.elements
-    // console.log(repoName)
-    // console.log({repoName: repoName.repository_name.value, commitMsg: commitMsg.commit_message.value})
-    
+    const { repository_name, commit_message } = e.target.elements
+    // console.log(repository_name.value)
+    // create github repo
+    // console.log('prototypeCode: ', props.prototypeCode)
+    // console.log('username: ',props.username)
+    await fetch('/export', {
+      method: 'POST',
+      // credentials: 'include',
+      mode: 'cors',
+      body: 
+      JSON.stringify({
+        "prototypeCode": props.prototypeCode,
+        "repository_name": repository_name.value,
+        "commit_message": commit_message.value,
+        "username": props.username,
+      }),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+    //x-www-form-urlencoded
+    //multipart/form-data
+  
+    })
+      .then(response => {
+        console.log('reached here')
+        return response.json()
+      })
+        .then(data => {
+        console.log('second.then: ', data)
+        return data
+      }
+      )
+      .catch(err => console.log('err: ', err))
     // make fetch request to server to make request to Github API
     // need to include access_token and userData jwts
   }

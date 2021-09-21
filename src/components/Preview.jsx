@@ -1,3 +1,5 @@
+
+
 function Preview({ children }) {
   return (
     <>
@@ -6,6 +8,6 @@ function Preview({ children }) {
   )
 };
 
-export default connect(mapStateToProps, null)(Preview)
+export default Preview
 
 
