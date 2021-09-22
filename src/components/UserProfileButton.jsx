@@ -17,13 +17,13 @@ function UserProfileButton(props) {
 
   return (
     <div id="profile_button_container"> 
+      {
+        dropdown ? <ExportButton handleDropdown={handleDropdown}/> : null
+      }
       <button id="profile_button" onClick={handleDropdown} > 
         <Icon icon="cib:github" />
         <span> <b> {props.username ? props.username : "user"} </b> </span>
       </button>
-      {
-        dropdown ? <ExportButton handleDropdown={handleDropdown}/> : null
-      }
     </div>
   )
 };

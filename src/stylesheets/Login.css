@@ -1,3 +1,8 @@
+/* body {
+  min-height: 100%;
+  overflow: hidden;
+} */
+
 .App {
   text-align: center;
   background-color: #303030;

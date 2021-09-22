@@ -1,10 +1,19 @@
 // import logo from './logo.svg';
 import '../stylesheets/Login.css';
-import { Icon } from '@iconify/react';;
+import { Icon } from '@iconify/react';
+import { useEffect } from 'react';
 
 function Login() {
- 
+  
+  
   return (
+    useEffect(() => {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    }, []),
+
     <div className="App">
       <h1 id='Abstract'> <Icon icon="mdi:hexagon-outline" id="hexagon" rotate={1} /> Abstract </h1>
         <header className="App-header">

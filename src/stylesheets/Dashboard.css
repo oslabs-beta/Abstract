@@ -74,16 +74,10 @@
   
 }
 
-
 /* Dashboard Styling */
 #dashboard {
   display: grid;
   grid-template-columns: 1fr 3fr;
-}
-
-#hexagon {
-  width: 60px;
-  height: 60px;
 }
 
 /* Component Menu Styling*/
@@ -99,57 +93,79 @@
 
 /* Dashboard-Right Styling */
 #dashboard_right {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 60% auto 100px;
+  grid-template-rows: 124px 420px auto;
+  grid-template-areas: 
+  "dashboard_header profile_button_container profile_button_container"
+  "body_container body_container size_button"
+  "body_container body_container nav_button";
 
   height: 1024px;
   width: 1060px;
   background-color: #2B2929;
 }
 
-#dashboard_header {
-  grid-area: header;
+#abstract_title {
+  grid-area: dashboard_header;
+  grid-column-end: two;
+
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   height: 124px;
+
+  font-size: 48px;
+}
+
+#dashboard_header svg {
+  height: 60px;
+  width: 60px;
 }
 
 #profile_button_container {
+  grid-area: profile_button_container;
+  grid-column-end: four;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+
+  margin-right: 20px;
+
+  height: 124px;
 }
 
 #profile_button {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   height: 60px;
   width: 120px;
 
   background-color: #C4C4C4;
   border: none;
+
+  margin-left: 24px;
 }
 
-/* #profile_button svg {
-  width: 48px;
-  height: 48px;
-} */
+#profile_button svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
 
 #export_modal_button {
+  height: 60px;
+  width: 120px;
 
-}
-
-#dashboard_right {
-  display: grid;
-  grid-template-columns: auto 100px;
-  grid-template-rows: 124px 420px auto;
-  grid-template-areas: 
-  "header header"
-  "body_container size_button"
-  "body_container nav_button";
+  background-color: #C4C4C4;
+  border: none;
 }
 
 #body_container {
@@ -169,6 +185,7 @@
   height: 700px;
   width: 700px;
   overflow-y: scroll;
+  padding: 0px 25px 0px 25px;
 }
 
 #size_button_container {
