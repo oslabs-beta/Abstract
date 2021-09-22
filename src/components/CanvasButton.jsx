@@ -1,6 +1,8 @@
 import { React } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
+import { Icon } from '@iconify/react';
+
 
 const mapDispatchToProps = (dispatch) => ({
   toggleBodyView: (bodyView) => dispatch(actions.toggleBodyView(bodyView))
@@ -8,7 +10,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 function CanvasButton(props) {
   return (
-    <button onClick = {() => props.toggleBodyView('Canvas')} >Canvas</button>
+    <button id="canvas_button" onClick = {() => props.toggleBodyView('Canvas')}>
+      <Icon icon="el:brush" />
+    </button>
   )
 };
 

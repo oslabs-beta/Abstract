@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import ExportButton from './ExportButton';
+import { Icon } from '@iconify/react';
 
 const mapStateToProps = (state) => ({
   username: state.main.username
@@ -15,13 +16,14 @@ function UserProfileButton(props) {
   }
 
   return (
-    <div id="profile_button"> 
-      <button onClick={handleDropdown} > 
-        <span> <b> {props.username ? props.username : "user"} </b> </span>
-      </button>
+    <div id="profile_button_container"> 
       {
         dropdown ? <ExportButton handleDropdown={handleDropdown}/> : null
       }
+      <button id="profile_button" onClick={handleDropdown} > 
+        <Icon icon="cib:github" />
+        <span> <b> {props.username ? props.username : "user"} </b> </span>
+      </button>
     </div>
   )
 };

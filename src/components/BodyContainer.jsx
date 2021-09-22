@@ -19,20 +19,21 @@ function BodyContainer(props) {
 
   const scope = { Form, Button, Navbar, Container, Nav, NavDropdown };
 
+  // code string is intentially tabbed this way for formatting on render
   const code = `
-  render (
-    <>
-      ${props.prototypeCode}
-    </>
-  );
+render (
+  <>
+  ${props.prototypeCode}
+  </>
+);
   `;
 
   return (
     <div id="body_container">
-      <div style={{ color: "#FFFFFF" }}>{props.bodyView}</div>
+      <div style={{ color: "#FFFFFF", marginBottom: "24px" }}>{props.bodyView}</div>
       <LiveProvider code={code} scope={scope} noInline={true}>
         { props.bodyView === 'Code Preview' ? <Preview><LiveEditor /></Preview> : null }
-        <LiveError />
+        <div style={{ backgroundColor: "white" }}><LiveError /></div>
         { props.bodyView === 'Canvas' ? <Canvas><LivePreview /></Canvas> : null }
       </LiveProvider>
     </div>
