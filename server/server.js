@@ -1,10 +1,4 @@
-// const path = import('path');
-// const express = require('express');
-// const app = express();
-// const PORT = 3000;
-// const dotenv = require('dotenv');
-// const accountController = require('./controllers/accountController');
-// const cors = require('cors');
+
 import accountController from './controllers/accountController.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -16,9 +10,6 @@ const app = express();
 const PORT = 5000;
 
 dotenv.config();
-
-const AccessKey = process.env.GITHUB_OAUTH_CLIENT_ID;
-const SecretKey = process.env.GITHUB_OAUTH_CLIENT_SECRET;
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -42,12 +33,12 @@ accountController.handleOAuth);
 
 // github API to create a repo 
 app.post('/export', 
-// create repo middleware
   accountController.createRepo, 
   (req, res) => {
     return res.sendStatus(200)  
   }
 )
+//github API submit files to existing repo
 app.put('/export', 
   accountController.updateRepo,
   (req, res) => {
@@ -55,7 +46,6 @@ app.put('/export',
   }
 )
 
-//github api submit files to existing repo
 
 
 // catch-all route handler for any requests to an unknown route

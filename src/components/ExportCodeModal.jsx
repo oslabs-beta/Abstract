@@ -2,24 +2,23 @@ import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import * as actions from '../actions/actions.js';
 import ExportModalBackdrop from "./ExportModalBackdrop";
-// import fetch from 'node-fetch';
+
 
 const mapStateToProps = (state) => ({
   exportModal: state.main.exportModal,
   prototypeCode: state.main.prototypeCode,
-  username: state.main.username
+  username: state.main.username,
+  bodyView: state.main.bodyView
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleExportModal: (toggle) => dispatch(actions.toggleExportModal(toggle))
+  toggleExportModal: (toggle) => dispatch(actions.toggleExportModal(toggle)),
 });
 
 function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const { repository_name, commit_message } = e.target.elements
-   
     // create github repo
     const createRepo = await fetch('/export', {
       method: 'POST',
@@ -35,7 +34,7 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
     .then(response => response.json())
 
     //update files
-    console.log('proto code: ', props.prototypeCode)
+    // console.log('proto code: ', props.prototypeCode)
     const updateRepo = await fetch('/export', {
         method: 'PUT',
         mode: 'cors',
@@ -76,7 +75,7 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
             <label htmlFor="commit_message">Commit Message:</label>
             <input type="text" id="commit_message" name="commit_message" placeholder="Enter a commit message."></input>
 
-            <button id="submit_export_button" type="submit">Export to Github</button>
+            <button id="submit_export_button" type="submit" >Export to Github</button>
           </form>
         </div>
       </motion.div>
