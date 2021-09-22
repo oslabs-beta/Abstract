@@ -19,12 +19,13 @@ function BodyContainer(props) {
 
   const scope = { Form, Button, Navbar, Container, Nav, NavDropdown };
 
+  // code string is intentially tabbed this way for formatting on render
   const code = `
-  render (
-    <>
-      ${props.prototypeCode}
-    </>
-  );
+render (
+  <>
+  ${props.prototypeCode}
+  </>
+);
   `;
 
   return (

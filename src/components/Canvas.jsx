@@ -10,15 +10,15 @@ function Canvas({ children, ...props }) {
   const [canvasStyle, setCanvasStyle] = useState({ width: '683px', height: '512px' });
 
   useEffect(() => {
-    if (props.canvasSize === 'iPad Pro') {
-      setCanvasStyle({ width: '512px', height: '683px' })
-    } else if (props.canvasSize === 'iPhone X') {
+    if (props.canvasSize === 'iPad Pro') { // 75% of actual iPad Pro resolution
+      setCanvasStyle({ width: '768px', height: '1024.5px' })
+    } else if (props.canvasSize === 'iPhone X') { // 100% of actual iPhone X resolution
       setCanvasStyle({ width: '375px', height: '812px' })
     }
   }, [props.canvasSize])
 
   return (
-    <div id="canvas_backdrop" style={ { ...canvasStyle, backgroundColor: "white", borderStyle: "solid" } }>
+    <div id="canvas_backdrop" style={{ ...canvasStyle, backgroundColor: "white", borderStyle: "solid", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       {/* <CanvasComponents/> */}
       { children }
     </div>
