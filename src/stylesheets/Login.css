@@ -1,0 +1,95 @@
+/* body {
+  min-height: 100%;
+  overflow: hidden;
+} */
+
+.App {
+  text-align: center;
+  background-color: #303030;
+}
+
+#Abstract {
+  color: white;
+  position: relative;
+  bottom: -30px;
+}
+
+#abstractLogo {
+  opacity: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(6px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#welcomeBorderBox {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 4px;
+  background-color: #c8c6c6;
+  width: 40%;
+  padding: 70px;;  
+}
+
+#frontPageLogInButton {
+  /* background-color: white;
+  height: 10px; */
+  border-radius: 5px;
+  font-size: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 90px;
+}
+
+#frontPageLogInButton:hover {
+  /* background-color: rgb(216, 213, 213);  */
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#frontPageSignUpButton {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+}
+
+
+#frontPageSignUpButton:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#logIn {
+  border-radius: 15px;
+  width: 270px;
+  height: 70px;
+  font-size: 30px;
+  word-wrap: break-word; 
+}
+
+#gitHubLogo {
+  width: 50px;
+  height: 50px;
+  padding: 1px;
+  
+}
+
+#hexagon {
+  color: white;
+}
+
+#welcomeMessage {
+  font-size: larger;
+  font-weight: 350;
+}
+#noAccount {
+  font-size: large;
+  font-weight: 400;
+}
