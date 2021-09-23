@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => ({
 function ReactRouterComponent() {
   return (
     <div>
-      <button class='componentButton'>
+      <button className='componentButton'>
       <Icon icon='icon-park-outline:caution' id='componentIcon'/>
       </button>
       <p>IN-PROGRESS</p>

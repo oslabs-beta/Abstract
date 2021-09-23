@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => ({
 function HTMLComponent({ selectComponent, name, key, pic }) {
   return (
     <div>
-      <button  onClick={() => selectComponent(name)} class='componentButton'>{pic}</button>
+      <button  onClick={() => selectComponent(name)} className='componentButton'>{pic}</button>
       <p>{name}</p> 
     </div>
   );
