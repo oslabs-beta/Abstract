@@ -15,29 +15,31 @@ function ComSettings(props) {
   switch (props.selectedComponent) { 
     case 'div': 
       return (
-        <>
-          <h1>Div Component Settings</h1>
+        <div id="conditionalForm">
+          <h1>Div</h1>
           <Form>
             <Form.Group>
-              <Form.Label>Parent Component</Form.Label>
+              {/* <Form.Label>Parent Component</Form.Label> */}
               <Form.Select>
+                <option>Parent Component</option>
                 <option>1</option>
                 <option>2</option>
-                <option>3</option>
               </Form.Select>
-              <Form.Label>Component ID</Form.Label>
-              <Form.Control type='component_name'></Form.Control>
-              <Form.Label>Class Name</Form.Label>
-              <Form.Control type='class_name' placeholder='Enter a class name (optional)'/>
+              {/* <Form.Label>Component ID</Form.Label> */}
+              <br></br>
+              <Form.Control type='component_name' placeholder='Component ID'></Form.Control>
+              <br></br>
+              {/* <Form.Label>Class Name</Form.Label> */}
+              <Form.Control type='class_name' placeholder='Class name (optional)'/>
             </Form.Group>
           </Form>
           <AddButton></AddButton>
-      </>
+      </div>
       )
     case 'link': 
       return (
-      <>
-        <h1>Link Component Settings</h1>
+      <div id="conditionalForm">
+        <h1>Link</h1>
         <Form>
           <Form.Group>
             <Form.Label>Parent Component</Form.Label>
@@ -51,12 +53,12 @@ function ComSettings(props) {
           </Form.Group>
         </Form>
         <AddButton></AddButton>
-      </>
+      </div>
       )
     case 'image':
       return (
-        <>
-          <h1>Image Component Settings</h1>
+        <div id="conditionalForm">
+          <h1>Image</h1>
           <Form>
             <Form.Group>
               <Form.Label>Parent Component</Form.Label>
@@ -74,12 +76,12 @@ function ComSettings(props) {
             </Form.Group>
           </Form>
           <AddButton></AddButton>
-        </>
+        </div>
       )
     case 'paragraph':
       return (
-        <>
-          <h1>Paragraph Component Settings</h1>
+        <div id="conditionalForm">
+          <h1>Paragraph</h1>
           <Form>
             <Form.Group>
               <Form.Label>Parent Component</Form.Label>
@@ -91,12 +93,12 @@ function ComSettings(props) {
             </Form.Group>
           </Form>
           <AddButton></AddButton>
-        </>
+        </div>
       )  
     case 'button':
       return (
-        <>
-          <h1>Button Component Settings</h1>
+        <div id="conditionalForm">
+          <h1>Button</h1>
           <Form>
             <Form.Group>
               <Form.Label>Parent Component</Form.Label>
@@ -112,42 +114,50 @@ function ComSettings(props) {
             </Form.Group>
             </Form>
           <AddButton component="button"></AddButton>
-        </>
+        </div>
       )
     case 'form':
       function renderFormSettings() {
         if (methods === 'Form.Control') {
           return (
-          <>
-            <h2>Form.Control Component Settings</h2>
+          <div id="conditionalForm">
+            <h2 id='h2'>Form.Control</h2>
             <Form>
             <Form.Group>
-              <Form.Label>Parent Component</Form.Label>
+              {/* <Form.Label>Parent Component</Form.Label> */}
               <Form.Select>
+                <option>Parent Component</option>
                 <option>1</option>
               </Form.Select>
-              <Form.Label>Class Name</Form.Label>
+              <br></br>
+              {/* <Form.Label>Class Name</Form.Label> */}
               <Form.Control type='class_name' placeholder='class name (optional)'/>
-              <Form.Label>Component ID</Form.Label>
-              <Form.Control type='component_id' placeholder='Component identifier'></Form.Control>
-              <Form.Label>Type</Form.Label>
+              <br></br>
+              {/* <Form.Label>Component ID</Form.Label> */}
+              <Form.Control type='component_id' placeholder='Component ID'></Form.Control>
+              <br></br>
+              {/* <Form.Label>Type</Form.Label> */}
               <Form.Control type='type' placeholder='Type'/>
-              <Form.Label>Value</Form.Label>
+              <br></br>
+              {/* <Form.Label>Value</Form.Label> */}
               <Form.Control type='value' placeholder='Value'/>
-              <Form.Label>Placeholder Text</Form.Label>
-              <Form.Control type='placeholder' placeholder='Placeholder'/>
-              <Form.Label>Size</Form.Label>
-              <Form.Control type='size' placeholder='size of form'/>
+              <br></br>
+              {/* <Form.Label>Placeholder Text</Form.Label> */}
+              <Form.Control type='placeholder' placeholder='Placeholder Text'/>
+              <br></br>
+              {/* <Form.Label>Size</Form.Label> */}
+              <Form.Control type='size' placeholder='Size of form'/>
+              <br></br>
               <Form.Check type="checkbox" label='Required'/>
             </Form.Group>
             </Form>
           <AddButton></AddButton>
-          </>
+          </div>
           )
         } else if (methods === 'Form.Group') {
           return (
-            <>
-              <h2>Form.Group Component Settings</h2>
+            <div id="conditionalForm">
+              <h2 id='h2'>Form.Group</h2>
               <Form>
                 <Form.Group>
                   <Form.Label>Parent Component</Form.Label>
@@ -161,12 +171,12 @@ function ComSettings(props) {
                 </Form.Group>
               </Form>
               <AddButton></AddButton>
-            </>
+            </div>
               )
           } else if (methods === 'Form.Label') {
             return (
-              <>
-                <h2>Form.Label Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Form.Label</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -180,12 +190,12 @@ function ComSettings(props) {
                   </Form.Group>
                 </Form>
                 <AddButton></AddButton>
-              </>
+              </div>
             );
           } else if (methods === 'Form') {
               return (
-            <>
-              <h2>Form Component Settings</h2>
+            <div id="conditionalForm">
+              <h2 id='h2'>Form Component</h2>
               <Form>
                 <Form.Group>
                   <Form.Label>Parent Component</Form.Label>
@@ -195,11 +205,11 @@ function ComSettings(props) {
                 </Form.Group>
               </Form>
               <AddButton component="form"></AddButton>
-            </>
+            </div>
             )
           }
         } return (
-        <>
+        <div id="conditionalForm">
           <DropdownButton id="dropdown-item-button" title='Select'>
             <Dropdown.Item as="button" onClick={() => setMethods('Form')}>Form</Dropdown.Item>
             <Dropdown.Item as="button" onClick={() => setMethods('Form.Control')}>Form.Control</Dropdown.Item>
@@ -207,15 +217,15 @@ function ComSettings(props) {
             <Dropdown.Item as="button" onClick={() => setMethods('Form.Label')}>Form.Label</Dropdown.Item>
           </DropdownButton>
           { renderFormSettings() }
-        </>
+        </div>
       )
     
       case 'navbar':
         function renderNavbarSettings() {
           if (methods === 'Navbar') {
             return (
-              <>
-                <h2>Navbar Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Navbar Component</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -255,12 +265,12 @@ function ComSettings(props) {
                   </Form.Group>
                 </Form>
                 <AddButton></AddButton>
-              </>
+              </div>
             )
           } else if (methods === 'Navbar.Brand') {
             return (
-              <>
-                <h2>Navbar.Brand Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Navbar.Brand </h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -274,12 +284,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-              </>
+              </div>
             )
           } else if (methods === 'Navbar.Toggle') {
             return (
-              <>
-                <h2>Navbar.Toggle Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Navbar.Toggle</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -294,12 +304,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-              </>
+              </div>
             )
           } else if (methods === 'Navbar.Collapse') {
             return (
-              <>
-                <h2>Navbar.Collapse Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Navbar.Collapse </h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -311,12 +321,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-              </>
+              </div>
             )
           }
         } 
         return (
-          <>
+          <div id="conditionalForm">
             <DropdownButton id="dropdown-item-button" title='Select'>
               <Dropdown.Item as="button" onClick={() => setMethods('Navbar')}>Navbar</Dropdown.Item>
               <Dropdown.Item as="button" onClick={() => setMethods('Navbar.Brand')}>Navbar.Brand</Dropdown.Item>
@@ -324,14 +334,14 @@ function ComSettings(props) {
               <Dropdown.Item as="button" onClick={() => setMethods('Navbar.Collapse')}>Navbar.Collapse</Dropdown.Item>
             </DropdownButton>
             { renderNavbarSettings() }
-          </>
+          </div>
         )
       case 'nav': 
         function renderNavSettings() {
           if (methods === 'Nav') {
             return (
-              <>
-                <h2>Nav Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Nav Component</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -345,12 +355,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-            </>
+            </div>
             )
           } else if (methods === 'Nav.Link') {
             return (
-             <>
-                <h2>Navbar.Collapse Component Settings</h2>
+             <div id="conditionalForm">
+                <h2 id='h2'>Navbar.Collapse</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -364,12 +374,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-            </>
+            </div>
             )
           } else if (methods === 'Nav.DropDown') {
             return (
-              <>
-                <h2>Navbar.Dropdown Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Navbar.Dropdown </h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -383,12 +393,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-            </>
+            </div>
             )
           } else if (methods === 'Nav.DropDownItem') {
             return (
-              <>
-                <h2>Navbar.DropdownItem Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>Navbar.DropdownItem </h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -402,27 +412,27 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-            </>
+            </div>
             )
           }
         } 
         return (
-          <>
+          <div id="conditionalForm">
             <DropdownButton id="dropdown-item-button" title='Select'>
               <Dropdown.Item as="button" onClick={() => setMethods('Nav')}>Nav</Dropdown.Item>
               <Dropdown.Item as="button" onClick={() => setMethods('Nav.Link')}>Nav.Link</Dropdown.Item>
-              <Dropdown.Item as="button" onClick={() => setMethods('Nav.DropDown')}>Navbar.Toggle</Dropdown.Item>
-              <Dropdown.Item as="button" onClick={() => setMethods('Nav.DropDownItem')}>Navbar.Toggle</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={() => setMethods('Nav.DropDown')}>Navbar.DropDown</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={() => setMethods('Nav.DropDownItem')}>Navbar.DropDownItem</Dropdown.Item>
             </DropdownButton>
             { renderNavSettings() }
-          </>
+          </div>
         )
       case 'list':
         function renderListSettings() {
           if (methods === 'List') {
             return (
-              <>
-                <h2>List Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>List Component</h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -436,12 +446,12 @@ function ComSettings(props) {
                   </Form.Group>
               </Form>
               <AddButton></AddButton>
-            </>
+            </div>
             )
           } else if (methods === 'List.Group') {
             return (
-              <>
-                <h2>List.Group Component Settings</h2>
+              <div id="conditionalForm">
+                <h2 id='h2'>List.Group </h2>
                 <Form>
                   <Form.Group>
                     <Form.Label>Parent Component</Form.Label>
@@ -452,24 +462,24 @@ function ComSettings(props) {
                       <Form.Control type='class_name' placeholder='class name (optional)'></Form.Control>
                   </Form.Group>
                 </Form>
-              </>
+              </div>
             )
           }
         }   
           return (
-            <>
+            <div id="conditionalForm">
               <DropdownButton id="dropdown-item-button" title='Select'>
                 <Dropdown.Item as="button" onClick={() => setMethods('List')}>List</Dropdown.Item>
                 <Dropdown.Item as="button" onClick={() => setMethods('List.Group')}>List.Group</Dropdown.Item>
 
               </DropdownButton>
               { renderListSettings() }
-            </>
+            </div>
           )
         default: 
         return (
-        <>
-        </>
+        <div id="conditionalForm">
+        </div>
       )
       
   }
