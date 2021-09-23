@@ -7,7 +7,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 function AddButton({ addComponent, component }) {
   return (
-    <button onClick={() => addComponent(component)}>Add</button>
+    <div>
+      <button id='addButton' onClick={() => addComponent(component)}>Add</button>
+    </div>
   )
 };
 

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { React } from 'react';
 import * as actions from '../actions/actions.js';
+import { Icon } from '@iconify/react';
 
 const mapStateToProps = (state) => ({
   exportModal: state.main.exportModal,
@@ -15,7 +16,10 @@ const mapDispatchToProps = (dispatch) => ({
 
 function ExportButton(props) {
   return (
-    <button id="export_modal_button" onClick={() => { props.handleDropdown(); props.toggleExportModal(!props.exportModal); props.toggleBodyView('Canvas') }}>Export</button>
+    <button id="export_modal_button" onClick={() => { props.handleDropdown(); props.toggleExportModal(!props.exportModal); props.toggleBodyView('Canvas') }}>
+      <Icon icon="cib:github" id="gitHubLogo"/>
+       <b> Export </b>
+    </button>
   )
 };
 
