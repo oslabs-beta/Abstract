@@ -28,7 +28,7 @@ function Login() {
                </a>
               </div> <br/>
                 <h3 id ="noAccount"> Don't have a Github account? </h3>
-                  <a href="https://github.com/join" class="button" >
+                  <a href="https://github.com/join" className="button" >
                     <div>
                       <button id="frontPageSignUpButton"> Sign Up </button>
                     </div>

@@ -132,7 +132,7 @@ accountController.createRepo = async (req, res, next) => {
     private: true,
     auto_init: true,
   });
-  // console.log('Finished post req')
+  console.log('Finished post req')
   return next();
 }
  catch (e) {
@@ -142,7 +142,7 @@ accountController.createRepo = async (req, res, next) => {
 
 //update repo with files
 accountController.updateRepo = async (req, res, next) => {
-  // console.log('got to update Repo')
+  console.log('got to update Repo')
   try {
     const username = req.body.username;
     const commit_msg = req.body.commit_message;
@@ -154,7 +154,7 @@ accountController.updateRepo = async (req, res, next) => {
 
     // console.log('repo: ',`${repo_name}`)
     const octokit = new Octokit({ auth: `${decodedCookie}` });
-    console.log('we better be getting this: ', req.body.prototypeCode)
+    // console.log('we better be getting this: ', req.body.prototypeCode)
     const prototypeCode = Buffer.from(`${req.body.prototypeCode}`, 'binary').toString('base64');
     console.log('base64: ', prototypeCode)
     const updateResponse = await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {

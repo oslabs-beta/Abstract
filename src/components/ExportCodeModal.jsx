@@ -27,12 +27,13 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
         "repository_name": repository_name.value,
       }),
       headers: {
-        'Accept': 'application/json, text/plain, */*',
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
     })
-    .then(response => response.json())
-
+    
+    .catch(e => console.log('create err :', e));
+// console.log('finished create Repo')
     //update files
     // console.log('proto code: ', props.prototypeCode)
     const updateRepo = await fetch('/export', {
@@ -48,13 +49,10 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
           'Accept' : 'application/json',
           'Content-Type': 'application/json' }
       })
-      .then(response => response.json())
-      .then(data => data)
       .then(toggleExportModal(!exportModal))
       .then(alert('Code successfully exported! Please check your Github repos.'))
-      .catch(e => console.log('err: ', e))  
+      .catch(e => console.log('update err: ', e));
     }
-    // })
 
   return (
     <ExportModalBackdrop onClick={() => toggleExportModal(!exportModal)}>
