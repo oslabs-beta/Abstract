@@ -148,6 +148,8 @@ accountController.updateRepo = async (req, res, next) => {
     const commit_msg = req.body.commit_message;
     const repo_name = req.body.repository_name;
 
+    let name = repo_name.replace(' ', '-')
+
     const cookie = req.cookies["github-token-jwt"]
     const decodedCookie = jwt_decode(cookie).access_token
     // console.log('decoded cookie :', decodedCookie)
@@ -159,7 +161,7 @@ accountController.updateRepo = async (req, res, next) => {
     console.log('base64: ', prototypeCode)
     const updateResponse = await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
       owner: `${username}`,
-      repo: `${repo_name}`,
+      repo: `${name}`,
       message: `${commit_msg}`,
       content: `${prototypeCode}`,
       path: `App.jsx`,
