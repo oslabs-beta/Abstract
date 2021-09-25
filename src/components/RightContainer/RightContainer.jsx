@@ -1,9 +1,9 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 import NavButtons from './NavButtons.jsx';
 import BodyContainer from './BodyContainer.jsx';
 import UserProfileButton from './UserProfileButton.jsx';
 import SizeButton from './SizeButton.jsx';
-import { Icon } from '@iconify/react';
 
 
 function RightContainer() {

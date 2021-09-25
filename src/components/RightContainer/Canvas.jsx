@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-// import CanvasComponents from './CanvasComponents.jsx';
 
 const mapStateToProps = (state) => ({
   canvasSize: state.main.canvasSize
@@ -19,7 +18,6 @@ function Canvas({ children, ...props }) {
 
   return (
     <div id="canvas_backdrop" style={{ ...canvasStyle, backgroundColor: "white", borderStyle: "solid", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-      {/* <CanvasComponents/> */}
       { children }
     </div>
   )

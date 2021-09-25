@@ -1,9 +1,4 @@
-/* body {
-  min-height: 100%;
-  overflow: hidden;
-} */
-
-.App {
+.logInContainer {
   text-align: center;
   background-color: #303030;
 }
@@ -20,7 +15,7 @@
   height: 50px;
 }
 
-.App-header {
+.logInHeader {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,8 +38,6 @@
 }
 
 #frontPageLogInButton {
-  /* background-color: white;
-  height: 10px; */
   border-radius: 5px;
   font-size: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -52,7 +45,6 @@
 }
 
 #frontPageLogInButton:hover {
-  /* background-color: rgb(216, 213, 213);  */
   box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Form, Dropdown, DropdownButton } from 'react-bootstrap';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import '../stylesheets/Dashboard.css'
+
 const mapStateToProps = (state) => ({
   selectedComponent: state.main.selectedComponent
 });
@@ -19,17 +19,14 @@ function ComSettings(props) {
           <h1>Div</h1>
           <Form>
             <Form.Group>
-              {/* <Form.Label>Parent Component</Form.Label> */}
+              <Form.Label>Parent Component</Form.Label>
               <Form.Select>
-                <option>Parent Component</option>
                 <option>1</option>
                 <option>2</option>
               </Form.Select>
-              {/* <Form.Label>Component ID</Form.Label> */}
-              <br></br>
-              <Form.Control type='component_name' placeholder='Component ID'></Form.Control>
-              <br></br>
-              {/* <Form.Label>Class Name</Form.Label> */}
+              <Form.Label>Component ID</Form.Label>
+              <Form.Control type='component_name' placeholder='Enter Component ID'></Form.Control>
+              <Form.Label>Class Name</Form.Label>
               <Form.Control type='class_name' placeholder='Class name (optional)'/>
             </Form.Group>
           </Form>
@@ -124,30 +121,22 @@ function ComSettings(props) {
             <h2 id='h2'>Form.Control</h2>
             <Form>
             <Form.Group>
-              {/* <Form.Label>Parent Component</Form.Label> */}
+              <Form.Label>Parent Component</Form.Label>
               <Form.Select>
-                <option>Parent Component</option>
                 <option>1</option>
               </Form.Select>
-              <br></br>
-              {/* <Form.Label>Class Name</Form.Label> */}
+              <Form.Label>Class Name</Form.Label>
               <Form.Control type='class_name' placeholder='class name (optional)'/>
-              <br></br>
-              {/* <Form.Label>Component ID</Form.Label> */}
+              <Form.Label>Component ID</Form.Label>
               <Form.Control type='component_id' placeholder='Component ID'></Form.Control>
-              <br></br>
-              {/* <Form.Label>Type</Form.Label> */}
+              <Form.Label>Type</Form.Label>
               <Form.Control type='type' placeholder='Type'/>
-              <br></br>
-              {/* <Form.Label>Value</Form.Label> */}
+              <Form.Label>Value</Form.Label>
               <Form.Control type='value' placeholder='Value'/>
-              <br></br>
-              {/* <Form.Label>Placeholder Text</Form.Label> */}
+              <Form.Label>Placeholder Text</Form.Label>
               <Form.Control type='placeholder' placeholder='Placeholder Text'/>
-              <br></br>
-              {/* <Form.Label>Size</Form.Label> */}
+              <Form.Label>Size</Form.Label>
               <Form.Control type='size' placeholder='Size of form'/>
-              <br></br>
               <Form.Check type="checkbox" label='Required'/>
             </Form.Group>
             </Form>

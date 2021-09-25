@@ -4,10 +4,10 @@ const initialState = {
   username: "oakj",
   renderedComponents: [], 
   bodyView: "Canvas", // Canvas, Code Preview
-  canvasSize: "iPad Pro", //iphone, ipad 
-  componentMenu: true, //boolean
+  canvasSize: "iPad Pro", // iPhone X, iPad Pro
+  componentMenu: true,
   selectedComponent: "",
-  exportModal: false, // boolean
+  exportModal: false,
   // prototype code is used as an input to React-Live inside BodyContainer and as export code to Github
   prototypeCode: ``,
 };
@@ -21,7 +21,6 @@ const reducer = (state = initialState, action) => {
       };
     }
     case types.ADD_COMPONENT: {
-      console.log('ADD COMPONENT reducer is hit');
       return {
         ...state,
         prototypeCode: state.prototypeCode + action.payload
@@ -37,14 +36,12 @@ const reducer = (state = initialState, action) => {
       };
     }
     case types.TOGGLE_CANVAS_SIZE: {
-      console.log('toggle canvas size happened inside the reducer');
       return {
         ...state,
         canvasSize: action.payload
       };
     }
     case types.TOGGLE_COMPONENT_MENU: {
-      console.log('entered toggle component menu reducer');
       return {
         ...state,
         componentMenu: !state.componentMenu,
