@@ -12,7 +12,6 @@ export const setUser = (username) => {
 // action for ADD_COMPONENT action type
 export const addComponent = (selectedComponent) => {
   // if selectedComponent === "Form", assign payload to componentTypes.Form
-  console.log('ADD COMPONENT action is hit');
   if (selectedComponent === "form"){
     return {
       type: types.ADD_COMPONENT,
@@ -48,7 +47,6 @@ export const toggleCanvasSize = (canvasSize) => ({
 
 //action for TOGGLE_COMPONENT_MENU action type
 export const toggleComponentMenu = (componentMenu) => {
-  console.log('entered toggle component menu action creator');
   return {
     type: types.TOGGLE_COMPONENT_MENU,
     payload: componentMenu
@@ -66,25 +64,3 @@ export const toggleExportModal = (toggle) => ({
   type: types.TOGGLE_EXPORT_MODAL,
   payload: toggle
 })
-
-
-// export const addCardActionCreator = marketId => ({
-//   type: types.ADD_CARD,
-//   payload: marketId,
-// });
-
-// export const ANSWERED_CORRECTLY = () => (dispatch, getState) => {
-//   const userID = getState().flashCodes.userID;
-//   const flashCardID = getState().flashCodes.flashCardList[0]._id
-//   console.log('line 18', userID, flashCardID)
-//   axios.post('/cards/answeredCorrect', {userID: userID, flashCardID: flashCardID})
-//     .then(({status}) =>{
-//       if(status === 200){
-//         dispatch({
-//           type: types.ANSWERED_CORRECTLY,
-//           payload: flashCardID
-//         })
-//       }
-//     })
-//     .catch(console.error)
-// };

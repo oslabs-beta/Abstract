@@ -1,8 +1,6 @@
-
 import accountController from './controllers/accountController.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 
@@ -16,20 +14,9 @@ app.use(express.urlencoded());
 app.use(cors());
 app.use(cookieParser());
 
-// app.use(express.static(path.join(__dirname, 'build')));
-
 //oauth login
 app.get('/oauth', 
-accountController.handleOAuth);
-
-// app.get('/success', accountController.successfullOAuth, (req, res) => {
-//   return res.redirect('http://localhost:3000/dashboard')
-// });
-
-// app.get('/', (req, res) => {
-//   return res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
-
+  accountController.handleOAuth);
 
 // github API to create a repo 
 app.post('/export', 
@@ -38,6 +25,7 @@ app.post('/export',
     return res.sendStatus(200)  
   }
 )
+
 //github API submit files to existing repo
 app.put('/export', 
   accountController.updateRepo,
@@ -45,8 +33,6 @@ app.put('/export',
     return res.sendStatus(200)
   }
 )
-
-
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Page not Found'));
