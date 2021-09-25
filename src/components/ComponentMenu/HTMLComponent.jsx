@@ -1,6 +1,5 @@
-import { propTypes } from 'react-bootstrap/esm/Image';
 import { connect } from 'react-redux';
-import * as actions from '../actions/actions.js';
+import * as actions from '../../actions/actions.js';
 
 const mapDispatchToProps = (dispatch) => ({
   selectComponent: (component) => dispatch(actions.selectComponent(component)),
@@ -9,11 +8,10 @@ const mapDispatchToProps = (dispatch) => ({
 function HTMLComponent({ selectComponent, name, key, pic }) {
   return (
     <div>
-      <button  onClick={() => selectComponent(name)} class='componentButton'>{pic}</button>
+      <button  onClick={() => selectComponent(name)} className='componentButton'>{pic}</button>
       <p>{name}</p> 
     </div>
   );
 } 
-
 
 export default connect(null, mapDispatchToProps)(HTMLComponent);

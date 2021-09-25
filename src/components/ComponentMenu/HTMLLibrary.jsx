@@ -1,7 +1,6 @@
 import HTMLComponent from './HTMLComponent.jsx';
 import { Icon } from '@iconify/react';
 
-
 function HTMLLibrary (props) {
   const HTMLcomponents = [];
   const names = ['div', 'link', 'image', 'paragraph']

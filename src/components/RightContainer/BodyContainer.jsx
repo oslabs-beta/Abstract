@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import * as actions from '../actions/actions.js';
+import * as actions from '../../actions/actions.js';
 import Canvas from './Canvas.jsx';
 import Preview from './Preview.jsx';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 function BodyContainer(props) {
-
   const scope = { Form, Button, Navbar, Container, Nav, NavDropdown };
 
   // code string is intentially tabbed this way for formatting on render

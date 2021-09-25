@@ -1,11 +1,8 @@
-// import logo from './logo.svg';
 import '../stylesheets/Login.css';
 import { Icon } from '@iconify/react';
 import { useEffect } from 'react';
 
 function Login() {
-  
-  
   return (
     useEffect(() => {
       document.body.style.overflow = "hidden";
@@ -14,9 +11,9 @@ function Login() {
       };
     }, []),
 
-    <div className="App">
+    <div className="logInContainer">
       <h1 id='Abstract'> <Icon icon="mdi:hexagon-outline" id="hexagon" rotate={1} /> Abstract </h1>
-        <header className="App-header">
+        <header className="logInHeader">
           <div id = "welcomeBorderBox">
             <h1 id="welcomeMessage"> Welcome to Abstract! <br/> Please log in via Github. </h1>
             <br/>
@@ -28,7 +25,7 @@ function Login() {
                </a>
               </div> <br/>
                 <h3 id ="noAccount"> Don't have a Github account? </h3>
-                  <a href="https://github.com/join" class="button" >
+                  <a href="https://github.com/join" className="button" >
                     <div>
                       <button id="frontPageSignUpButton"> Sign Up </button>
                     </div>

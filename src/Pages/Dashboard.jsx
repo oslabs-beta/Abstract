@@ -1,11 +1,10 @@
-// import logo from './logo.svg';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
 import '../stylesheets/Dashboard.css';
-import RightContainer from '../components/RightContainer';
-import ComponentMenu from '../components/ComponentMenu';
+import RightContainer from '../components/RightContainer/RightContainer';
+import ComponentMenu from '../components/ComponentMenu/ComponentMenu';
 import ExportCodeModal from '../components/ExportCodeModal';
 
 const mapStateToProps = (state) => ({
