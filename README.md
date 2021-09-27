@@ -31,9 +31,16 @@
 
 ## Demo
 ### Select Device Resolution for the Canvas
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/canvas-size.gif?raw=true" alt="canvas-size-gif" style="max-width: 75%;">
+
 ### Render Components on the Canvas
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/render-components.gif?raw=true" alt="render-components-gif" style="max-width: 75%;">
+
 ### Review Code
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/review-code.gif?raw=true" alt="review-code-gif" style="max-width: 75%;">
+
 ### Export Code
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/export-code.gif?raw=true" alt="export-code-gif" style="max-width: 75%;">
 
 ## Live Features
 1. Real-time live preview of your prototype including rendered components and styling.
