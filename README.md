@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://github.com/oslabs-beta/Abstract/blob/main/abstract-notext.png?raw=true" alt="logo" style="max-width: 100%;">
+</p>
+<h1 align="center">Abstract</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://camo.githubusercontent.com/b0ad703a46e8b249ef2a969ab95b2cb361a2866ecb8fe18495a2229f5847102d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667" alt="PRs Welcome" data-canonical-src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" style="max-width: 100%;">
 
-## Available Scripts
+  <img src="https://camo.githubusercontent.com/5fab2edf3816ef9fb3ebcaf6e613fa7b40ff7652ec69e5f6e7f695aa24bf5ce6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d626c75652e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-blue.svg" style="max-width: 100%;">
 
-In the project directory, you can run:
+  <img src="https://img.shields.io/badge/Release-1.0.0-lightgrey.svg" alt="Version 1.0.0" data-canonical-src="https://img.shields.io/badge/Release-1.0.0-lightgrey.svg" style="max-width: 100%;">
+</p>
 
-### `npm start`
+<h2 align="center">Abstract is a mobile-first prototyping application tool catered to the developer. Designed to build mobile-first application prototypes.</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
+* [Demo](#demo)
+  + [Select Device Resolution for the Canvas](#select-device-resolution-for-the-canvas)
+  + [Render Components on the Canvas](#render-components-on-the-canvas)
+  + [Review Code](#review-code)
+  + [Export Code](#export-code)
+* [Live Features](#live-features)
+* [How To Use](#how-to-use)
+  + [Web Based](#web-based)
+  + [Running Local](#running-local)
+* [Contribute](#how-to-use)
+  + [Contributors](#contributors)
+  + [How to contribute](#how-to-contribute)
+  + [New feature log](#new-feature-log)
+* [License](#license)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Demo
+### Select Device Resolution for the Canvas
+### Render Components on the Canvas
+### Review Code
+### Export Code
 
-### `npm test`
+## Live Features
+1. Real-time live preview of your prototype including rendered components and styling.
+2. Prototype on multiple canvas sizes (e.g. iPad Pro and iPhone X).
+3. Code preview formatted and synchronized with the prototype render view.
+4. React-Bootstrap component integration.
+5. Export your prototype code to your Github account.
+6. Secure signup and login using Github OAuth.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How To Use
+### Web-based
+1. Visit [abstractreact.dev](https://abstractreact.dev)
+2. Login with a GitHub account
+3. (Note that steps 4-5 below are only required if you are not viewing from an iPad Pro)
+4. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices e.g. iPad Pro)
+5. Set the developer view to be "iPad Pro" (it is set to "Responsive" by default)
+### Running local
+1. Clone this repo
+    ```
+    git clone https://github.com/oslabs-beta/Abstract.git
+    ```
+2. Navigate to your local directory
+3. Install dependencies
+    ```
+    npm install
+    ```
+4. Run the server (verify that localhost port 5000 is not being used)
+    ```
+    npm run server
+    ```
+5. Run the client (verify that locahost port 3000 is not being used)
+    ```
+    npm start
+    ```
+6. (Note that steps 7-8 below are only required if you are not viewing from an iPad Pro)
+7. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices e.g. iPad Pro)
+8. Set the developer view to be "iPad Pro" (it is set to "Responsive" by default)
 
-### `npm run build`
+## Contribute
+Abstract is an open source product supported via the tech accelerator OS Labs/OS Labs-beta. We encourge all feedback and welcome all contributions. Note that this product does not have any full-time contributors. Expect that there will be a wait time before your pull request can be reviewed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Contributors
+- Jonnie Oak [@Github](https://github.com/oakj) [@Linkedin](https://www.linkedin.com/in/oakj28/)
+- Brian Cheng [@Github](https://github.com/chengbrian9) [@Linkedin](https://www.linkedin.com/in/brian-cheng24/)
+- Raymond Hu [@Github](https://github.com/rhu0) [@Linkedin](https://www.linkedin.com/in/raymond-hu-3b18231a2/)
+- Omar Brown [@Github](https://github.com/rashadhndrxx) [@Linkedin](https://www.linkedin.com/in/omar-b-76892521b/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### How to contribute
+1. Fork the repo and create a new feature branch from dev.
+2. Any changes to the code base should include unit and/or integration tests.
+3. Ensure your code follows proper formatting recommendations.
+4. Create a pull request to dev.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### New feature log
+1. Implement as a PWA (progressive web application)
+2. Drag and drop feature from the component menu onto the canvas
+3. Refactor to TypeScript
+4. Support TypeScript exports
+5. Add support for additional component libraries (Material UI, Chakra UI, etc)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
