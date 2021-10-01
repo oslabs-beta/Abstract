@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 
 const app = express();
 const PORT = 5000;
@@ -13,6 +14,13 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 app.use(cookieParser());
+
+// to deploy
+app.use(express.static(path.join(__dirname, 'build')));
+// enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 //oauth login
 app.get('/oauth', 
