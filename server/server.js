@@ -5,6 +5,9 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 
+// intiate __dirname to root path
+const __dirname = path.resolve();
+
 const app = express();
 const PORT = 5000;
 
@@ -16,11 +19,13 @@ app.use(cors());
 app.use(cookieParser());
 
 // to deploy
-app.use(express.static(path.join(__dirname, 'build')));
-// enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+if (process.ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+  // enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
 
 //oauth login
 app.get('/oauth', 
