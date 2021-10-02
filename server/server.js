@@ -19,13 +19,12 @@ app.use(cors());
 app.use(cookieParser());
 
 // to deploy
-if (process.ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'build')));
-  // enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
-  app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
-}
+app.use(express.static(path.join(__dirname, 'build')));
+// enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 //oauth login
 app.get('/oauth', 
