@@ -15,6 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
+    "http-proxy-middleware": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "node-fetch": "^3.0.0",
@@ -60,7 +61,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
   "type": "module",
   "devDependencies": {
     "@iconify/react": "^3.0.1"
