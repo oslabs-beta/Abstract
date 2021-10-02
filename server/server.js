@@ -18,14 +18,6 @@ app.use(express.urlencoded());
 app.use(cors());
 app.use(cookieParser());
 
-// to deploy
-app.use(express.static(path.join(__dirname, 'build')));
-// enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-
 //oauth login
 app.get('/oauth', 
   accountController.handleOAuth);
@@ -45,6 +37,13 @@ app.put('/export',
     return res.sendStatus(200)
   }
 )
+
+// to deploy
+app.use(express.static(path.join(__dirname, 'build')));
+// enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Page not Found'));
