@@ -36,11 +36,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts build node ./server/server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon ./server/server.js react-scripts start"
+    "server-dev": "nodemon ./server/server.js "
   },
   "eslintConfig": {
     "extends": [
