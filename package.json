@@ -40,7 +40,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "NODE_ENV=production nodemon ./server/server.js"
+    "server-dev": "NODE_ENV=production nodemon ./server/server.js",
+    "server": "node ./server/server.js"
   },
   "eslintConfig": {
     "extends": [
