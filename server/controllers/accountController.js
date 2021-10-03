@@ -84,7 +84,7 @@ accountController.handleOAuth = async (req, res, next) => {
     })
 
     // redirect to dashboard with the username as a query paramater (to modify Redux store)
-    return res.redirect(`http://localhost:3000/dashboard/username=${userData.login}`);
+    return res.redirect(`https://abstractreact.herokuapp.com/dashboard/username=${userData.login}`);
 }
 
 //create github repo
