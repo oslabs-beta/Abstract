@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/oslabs-beta/Abstract/9624f5fd2a553d16be510e9f053db1497385c8a2/readme-assets/Asset_5.svg" alt="logo" style="max-height: 100px;">
+  <img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/Asset_3.png?raw=true" alt="logo" style="height: 100px">
 </p>
 
 <p align="center">
