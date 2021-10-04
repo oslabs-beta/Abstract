@@ -43,7 +43,7 @@ app.put('/export',
 // to deploy
 app.use(express.static(path.join(__dirname, 'build')));
 // enpoint '/*' is needed to cover client routes for '/' and '/dashboard'
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
