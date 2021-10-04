@@ -5,9 +5,18 @@ const mapDispatchToProps = (dispatch) => ({
   selectComponent: (component) => dispatch(actions.selectComponent(component))
 });
 
-function BootstrapComponent( {selectComponent, name, key, pic}) {
+function BootstrapComponent( {selectComponent, name, key, pic, disabled}) {
+  if (disabled) {
+    return (
+      <div> 
+        <button onClick={() => selectComponent(name)} disabled={true} className='componentButton'>{pic}</button>
+        <p>{name}</p>
+      </div>
+    )
+  }
   return (
-    <div> <button onClick={() => selectComponent(name)} className='componentButton'>{pic}</button>
+    <div>
+      <button onClick={() => selectComponent(name)} className='componentButton'>{pic}</button>
       <p>{name}</p>
     </div>
   );
