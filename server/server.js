@@ -18,6 +18,8 @@ app.use(express.urlencoded());
 app.use(cors());
 app.use(cookieParser());
 
+console.log('testing heroku logs: entered server.js');
+
 //oauth login
 app.get('/oauth', 
   accountController.handleOAuth);
