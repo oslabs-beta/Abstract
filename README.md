@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://github.com/oslabs-beta/Abstract/blob/main/abstract-notext.png?raw=true" alt="logo" style="max-width: 100%;">
+  <img src="https://raw.githubusercontent.com/oslabs-beta/Abstract/9624f5fd2a553d16be510e9f053db1497385c8a2/readme-assets/Asset_5.svg" alt="logo" style="max-height: 100px;">
 </p>
-<h1 align="center">Abstract</h1>
 
 <p align="center">
   <img src="https://camo.githubusercontent.com/b0ad703a46e8b249ef2a969ab95b2cb361a2866ecb8fe18495a2229f5847102d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667" alt="PRs Welcome" data-canonical-src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" style="max-width: 100%;">
