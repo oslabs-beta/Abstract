@@ -10,6 +10,7 @@ const accountController = {};
 
 // OAuth
 accountController.handleOAuth = async (req, res, next) => {
+  console.log('entered server.js/OAuth endpoint and handleOAuth controller');
   // deconstruct req.query to get code from first Github GET request
   const { code } = req.query;
   // handle edge case if code is not provided
