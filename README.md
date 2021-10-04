@@ -11,7 +11,9 @@
   <img src="https://img.shields.io/badge/Release-1.0.0-lightgrey.svg" alt="Version 1.0.0" data-canonical-src="https://img.shields.io/badge/Release-1.0.0-lightgrey.svg" style="max-width: 100%;">
 </p>
 
-<h2 align="center">Abstract is a mobile-first prototyping application tool catered to the developer. Designed to build mobile-first application prototypes.</h2>
+<h3 align="center">Abstract is a mobile first application focused on improving developer experience. Create mobile first application prototypes in real-time with proven UI frameworks such as React Bootstrap.</h3>
+
+</br>
 
 ## Table of Contents
 * [Demo](#demo)
