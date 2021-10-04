@@ -7,7 +7,7 @@
 
   <img src="https://camo.githubusercontent.com/5fab2edf3816ef9fb3ebcaf6e613fa7b40ff7652ec69e5f6e7f695aa24bf5ce6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d626c75652e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-blue.svg" style="max-width: 100%;">
 
-  <img src="https://img.shields.io/badge/Release-1.0.0-lightgrey.svg" alt="Version 1.0.0" data-canonical-src="https://img.shields.io/badge/Release-1.0.0-lightgrey.svg" style="max-width: 100%;">
+  <img src="https://img.shields.io/badge/Release-Beta%20--%201.0-lightgrey" alt="Version Beta 1.0.0" data-canonical-src="https://img.shields.io/badge/Release-Beta%20--%201.0-lightgrey" style="max-width: 100%;">
 </p>
 
 <h3 align="center">Abstract is a mobile first application focused on improving developer experience. Create mobile first application prototypes in real-time with proven UI frameworks such as React Bootstrap.</h3>
@@ -32,16 +32,16 @@
 
 ## Demo
 ### Select Device Resolution for the Canvas
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/canvas-size.gif?raw=true" alt="canvas-size-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/canvas-size.GIF?raw=true" alt="canvas-size-gif" style="max-width: 75%;">
 
 ### Render Components on the Canvas
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/render-components.gif?raw=true" alt="render-components-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/render-components.GIF?raw=true" alt="render-components-gif" style="max-width: 75%;">
 
 ### Review Code
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/review-code.gif?raw=true" alt="review-code-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/review-code.GIF?raw=true" alt="review-code-gif" style="max-width: 75%;">
 
 ### Export Code
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/export-code.gif?raw=true" alt="export-code-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/export-code.GIF?raw=true" alt="export-code-gif" style="max-width: 75%;">
 
 ## Live Features
 1. Real-time live preview of your prototype including rendered components and styling.
