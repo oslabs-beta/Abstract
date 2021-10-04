@@ -31,11 +31,9 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
         'Content-Type': 'application/json'
       },
     })
-    
     .catch(e => console.log('create err :', e));
-// console.log('finished create Repo')
+    
     //update files
-    // console.log('proto code: ', props.prototypeCode)
     const updateRepo = await fetch('/export', {
         method: 'PUT',
         mode: 'cors',

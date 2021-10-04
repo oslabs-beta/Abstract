@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import ExportButton from './ExportButton';
 
-
 const mapStateToProps = (state) => ({
   username: state.main.username
 });
@@ -11,7 +10,6 @@ function UserProfileButton(props) {
   const [dropdown, setDropdown] = useState(false);
 
   function handleDropdown() {
-    // console.log('dropdown onclick happens');
     setDropdown(!dropdown);
   }
 

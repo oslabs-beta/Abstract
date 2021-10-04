@@ -31,7 +31,6 @@
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  /* top: -20px; */
 }
 
 #close_modal {
@@ -92,7 +91,7 @@
   height: 1024px;
   width: 306px;
   border: 0.25px solid;
-  background-color: #C4C4C4
+  background-color: #f5fbff
 }
 
 /* Dashboard-Right Styling */
@@ -107,7 +106,7 @@
 
   height: 1024px;
   width: 1060px;
-  background-color: #2B2929;
+  background-color: white;
 }
 
 #abstract_title {
@@ -133,6 +132,7 @@
   grid-area: profile_button_container;
   grid-column-end: four;
 
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -182,7 +182,8 @@
   justify-content: flex-start;
 
   height: 878px;
-  width: 960px;
+  width: 100%;
+  background-color: white;
 }
 
 #code_preview {
@@ -195,13 +196,14 @@
 
 #size_button_container {
   grid-area: size_button;
-
+  grid-column-end: one;
+  /* width: 600px; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
-
   margin-top: 48px;
+  margin-right: 12px;
 }
 
 #size_button_container button {
@@ -225,11 +227,13 @@
 
 #nav_buttons {
   grid-area: nav_button;
-
+  grid-column-end: one; 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
+  margin-right: 12px;
+
 }
 
 #canvas_button,
@@ -265,7 +269,7 @@
 }
 
 .compMenuBtn:hover {
-  background-color: #31d67d;
+  color: #3e3eff;
 
 }
 
@@ -291,9 +295,12 @@
 }
 
 .componentButton:hover {
-  color: green;
+  color: #3e3eff;
 }
-
+.componentButton:focus {
+  color: #3e3eff;
+  border-color: #456DAA;
+}
 #addButton {
   padding: 7px 10px 7px 10px;
   color: white;
@@ -302,4 +309,19 @@
 
 #h2 {
   font-size: 1rem;
+}
+@media (min-width:320px) {
+
+}
+
+@media (min-width: 1024px) {
+  #dashboard_right {
+    width: auto;
+    height: auto
+  }
+   
+  #body_container {
+    width: auto;
+  }
+
 }

@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import { React } from 'react';
-import * as actions from '../actions/actions.js';
 import { Icon } from '@iconify/react';
+import * as actions from '../../actions/actions.js';
 
 const mapStateToProps = (state) => ({
   exportModal: state.main.exportModal,
   bodyView: state.main.bodyView
 })
 
-// map dispatch toggle export modal
 const mapDispatchToProps = (dispatch) => ({
   toggleExportModal: (toggle) => dispatch(actions.toggleExportModal(toggle)),
   toggleBodyView: (toggle) => dispatch(actions.toggleBodyView(toggle))
