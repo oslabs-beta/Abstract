@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/oslabs-beta/Abstract/e433ecba1a83f2cb5e330104e144219c3ff98948/readme-assets/Asset_2.svg" alt="logo" style="height: 75px">
+  <img src="https://raw.githubusercontent.com/oslabs-beta/Abstract/6de73799fc2d3bd23528b992127c5a932550db89/readme-assets/Asset_10.svg" alt="logo" style="height: 75px">
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Release-Beta%20--%201.0-lightgrey" alt="Version Beta 1.0.0" data-canonical-src="https://img.shields.io/badge/Release-Beta%20--%201.0-lightgrey" style="max-width: 100%;">
 </p>
 
-<h3 align="center">Abstract is a mobile first application focused on improving developer experience. Create mobile first application prototypes in real-time with proven UI frameworks such as React Bootstrap.</h3>
+<h3 align="center">Abstract Beta is a mobile first application focused on improving developer experience. Create mobile first application prototypes in real-time with proven UI frameworks such as React Bootstrap.</h3>
 
 </br>
 
@@ -53,11 +53,11 @@
 
 ## How To Use
 ### Web-based
-1. Visit [abstractreact.dev](https://abstractreact.dev)
+1. Visit [abstractreact.net](https://abstractreact.net)
 2. Login with a GitHub account
 3. (Note that steps 4-5 below are only required if you are not viewing from an iPad Pro)
-4. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices e.g. iPad Pro)
-5. Set the developer view to be "iPad Pro" (it is set to "Responsive" by default)
+4. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices in landscape mod e.g. iPad Pro)
+5. Set the developer view to be "iPad Pro" & rotate the view to landscape (it is set to "Responsive" by default)
 ### Running local
 1. Clone this repo
     ```
@@ -81,7 +81,7 @@
 8. Set the developer view to be "iPad Pro" (it is set to "Responsive" by default)
 
 ## Contribute
-Abstract is an open source product supported via the tech accelerator OS Labs/OS Labs-beta. We encourge all feedback and welcome all contributions. Note that this product does not have any full-time contributors. Expect that there will be a wait time before your pull request can be reviewed.
+Abstract is an open-source product supported via the tech accelerator OS Labs/OS Labs-beta. We encourge all feedback and welcome all contributions. Note that this product does not have any full-time contributors. Expect that there will be a wait time before your pull request can be reviewed.
 
 #### Contributors
 - Jonnie Oak [@Github](https://github.com/oakj) [@Linkedin](https://www.linkedin.com/in/oakj28/)
@@ -93,14 +93,13 @@ Abstract is an open source product supported via the tech accelerator OS Labs/OS
 1. Fork the repo and create a new feature branch from dev.
 2. Any changes to the code base should include unit and/or integration tests.
 3. Ensure your code follows proper formatting recommendations.
-4. Create a pull request to dev.
+4. Create a pull request to the dev branch.
 
 #### New feature log
-1. Implement as a PWA (progressive web application)
-2. Drag and drop feature from the component menu onto the canvas
-3. Refactor to TypeScript
-4. Support TypeScript exports
-5. Add support for additional component libraries (Material UI, Chakra UI, etc)
+1. Drag and drop feature from the component menu onto the canvas
+2. Refactor to TypeScript
+3. Support TypeScript exports
+4. Add support for additional component libraries (Material UI, Chakra UI, etc)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
