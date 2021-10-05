@@ -24,9 +24,9 @@ function ComponentMenu (props) {
       {
         props.componentMenu ?
           <>
-            <button className="compMenuBtn" onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
             <button className="compMenuBtn" onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button> { library === 'BootstrapLibrary' ? <BootstrapLibrary /> : null }
-            <button className="compMenuBtn" onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button>{ library === 'ReactRouterLibrary' ? <ReactRouterLibrary /> : null }
+            <button className="compMenuBtn" disabled={true} onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
+            <button className="compMenuBtn" disabled={true} onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button>{ library === 'ReactRouterLibrary' ? <ReactRouterLibrary /> : null }
             <ComSettings />
           </>
         : null
