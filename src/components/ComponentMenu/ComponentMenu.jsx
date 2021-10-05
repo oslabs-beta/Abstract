@@ -20,7 +20,7 @@ function ComponentMenu (props) {
 
   return (
     <div id="component_menu">
-      <h3>Component Menu</h3>
+      <div id='component_menu_banner'>Component Menu</div>
       {
         props.componentMenu ?
           <>
