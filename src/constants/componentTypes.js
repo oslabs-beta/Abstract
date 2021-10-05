@@ -34,7 +34,7 @@ export const bootstrapButton =
 
 export const bootstrapNavbar = 
 `
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" style={{ transform: "scale(0.9)", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Container>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
