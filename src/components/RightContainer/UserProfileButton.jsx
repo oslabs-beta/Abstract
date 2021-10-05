@@ -22,7 +22,7 @@ function UserProfileButton(props) {
       {/* <button id="profile_button" onClick={handleDropdown} > 
         <span> <b> {props.username ? props.username : "user"} </b> </span>
       </button> */}
-      <h3 id='profile_button'>{ props.username ? props.username : "user"}</h3>
+      <p id='profile_button'>{ props.username ? props.username : "user"}</p>
     </div>
   )
 };

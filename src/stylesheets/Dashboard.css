@@ -1,14 +1,14 @@
 /* Export Modal Styling*/
 .backdrop {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background: #000000e1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #canvas_backdrop {
@@ -36,6 +36,7 @@
 }
 .abstract_modal {
   width: clamp(50%, 800px, 90%);
+  /* width:50%; */
   height: min(50%, 700px);
   margin: auto;
   padding: 0 1rem 0 5rem;
@@ -44,7 +45,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #c4c4c4;
+  background: #f5fbff;
 }
 
 #export_form {
@@ -96,6 +97,10 @@
   display: flex;
   justify-content: center;
   align-self: center;
+  /* padding: 10px; */
+  margin: 30px;
+  background-color: #f5fbff;
+  border: 2px solid #093A7B;
   
 }
 
@@ -172,8 +177,7 @@
   align-items: center;
   justify-content: space-between;
   /* border: 2px solid #093A7B; */
-  margin-right: 20px;
-
+  /* margin-right: 20px; */
   height: 124px;
 }
 
@@ -182,13 +186,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  
   height: 85px;
   width: auto;
-
-  background-color: #f5fbff;
-  border: 2px solid #093A7B;
-
+  font-size: 1.25rem;
+  font-weight: lighter;
+  
+  /* background-color: #f5fbff; */
+  border-top: 1px solid #093A7B;
+  border-bottom: 1px solid #093A7B;
+  
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 0px;
   margin-right: 12px;
 }
 
@@ -200,11 +210,12 @@
 
 #export_modal_button {
   height: 85px;
-  width: 120px;
+  width: auto;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #C4C4C4;
-  border: none;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
+  font-size: 1.25rem;
 }
 
 #body_container {
@@ -242,8 +253,8 @@
   width: 85px;
   height: 85px;
 
-  background-color: #C4C4C4;
-  border: none;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
 
   margin-bottom: 24px;
 }
@@ -265,7 +276,6 @@
   align-items: flex-end;
   justify-content: flex-start;
   margin-right: 12px;
-
 }
 
 #canvas_button,
@@ -273,8 +283,8 @@
   width: 85px;
   height: 85px;
 
-  background-color: #C4C4C4;
-  border: none;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
 
   margin-bottom: 24px;
 }
@@ -303,6 +313,8 @@
   border-bottom: 2px solid #093A78;;
   border-left: none;
   border-right: none;
+  font-size: 1.25rem;
+  font-weight: lighter;
 }
 
 .compMenuBtn:hover {
