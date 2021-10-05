@@ -9,11 +9,9 @@ import SizeButton from './SizeButton.jsx';
 function RightContainer() {
   return (
     <div id="dashboard_right">
-      {/* header */}
-      <h1 id="abstract_title" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF' }}>
-        <Icon icon="mdi:hexagon-outline" rotate={1} />
-        Abstract
-      </h1>
+      {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingTop: '70px', width: '100%'}}>
+        <img id='dashlogo' src='../../logo.svg' alt='test'/>
+      </div> */}
       <UserProfileButton/>
       {/* right-side buttons */}
       <SizeButton/>

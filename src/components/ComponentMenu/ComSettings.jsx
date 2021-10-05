@@ -115,7 +115,8 @@ function ComSettings(props) {
       )
     case 'form':
       function renderFormSettings() {
-        if (methods === 'Form.Control') {
+        // remove X in if statement methods when functionality works
+        if (methods === 'XForm.Control') {
           return (
           <div id="conditionalForm">
             <h2 id='h2'>Form.Control</h2>
@@ -143,7 +144,8 @@ function ComSettings(props) {
           <AddButton></AddButton>
           </div>
           )
-        } else if (methods === 'Form.Group') {
+        // remove X in if statement methods when functionality works
+        } else if (methods === 'XForm.Group') {
           return (
             <div id="conditionalForm">
               <h2 id='h2'>Form.Group</h2>
@@ -162,7 +164,8 @@ function ComSettings(props) {
               <AddButton></AddButton>
             </div>
               )
-          } else if (methods === 'Form.Label') {
+        // remove X in if statement methods when functionality works
+        } else if (methods === 'XForm.Label') {
             return (
               <div id="conditionalForm">
                 <h2 id='h2'>Form.Label</h2>
