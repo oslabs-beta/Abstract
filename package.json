@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@iconify/react": "^3.0.1",
     "@octokit/core": "^3.5.1",
     "@octokit/request": "^5.6.1",
     "@testing-library/jest-dom": "^5.14.1",
@@ -20,6 +21,7 @@
     "node-fetch": "^3.0.0",
     "nodemon": "^2.0.12",
     "octokit": "^1.5.0",
+    "path": "^0.12.7",
     "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",
@@ -39,7 +41,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon ./server/server.js"
+    "server-dev": "nodemon ./server/server.js "
   },
   "eslintConfig": {
     "extends": [
@@ -59,9 +61,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
-  "type": "module",
-  "devDependencies": {
-    "@iconify/react": "^3.0.1"
-  }
+  "type": "module"
 }
