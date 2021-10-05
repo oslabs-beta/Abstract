@@ -17,7 +17,7 @@ function Canvas({ children, ...props }) {
   }, [props.canvasSize])
 
   return (
-    <div id="canvas_backdrop" style={{ ...canvasStyle, backgroundColor: "white", borderStyle: "solid", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+    <div id="canvas_backdrop" style={{ ...canvasStyle}}>
       { children }
     </div>
   )

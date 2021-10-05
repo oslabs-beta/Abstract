@@ -16,11 +16,13 @@ function UserProfileButton(props) {
   return (
     <div id="profile_button_container"> 
       {
-        dropdown ? <ExportButton handleDropdown={handleDropdown}/> : null
+        <ExportButton handleDropdown={handleDropdown}/>
       }
-      <button id="profile_button" onClick={handleDropdown} > 
+      <img id='dashlogo' src='../../abstractlogo.png' alt='test'/>
+      {/* <button id="profile_button" onClick={handleDropdown} > 
         <span> <b> {props.username ? props.username : "user"} </b> </span>
-      </button>
+      </button> */}
+      <h3 id='profile_button'>{ props.username ? props.username : "user"}</h3>
     </div>
   )
 };

@@ -29,8 +29,6 @@ render (
 
   return (
     <div id="body_container">
-      {/* <div style={{ color: "black", marginBottom: "24px" }}>{props.bodyView}</div> */}
-      <img id='dashlogo' src='../../abstractlogo.png' alt='test'/>
       <LiveProvider code={code} scope={scope} noInline={true}>
         { props.bodyView === 'Code Preview' ? <Preview><LiveEditor /></Preview> : null }
         <div style={{ backgroundColor: "white" }}><LiveError /></div>
