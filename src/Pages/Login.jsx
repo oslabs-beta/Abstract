@@ -20,14 +20,14 @@ function Login() {
               </div>
               <br/>
               <div>
-               <a href='https://github.com/login/oauth/authorize?client_id=46fc52b044a6de2f4a82&scope=read:user%20repo&redirect_uri=https://abstractreact.herokuapp.com/oauth'>
+               <a rel="canonical" href='https://github.com/login/oauth/authorize?client_id=46fc52b044a6de2f4a82&scope=read:user%20repo&redirect_uri=https://abstractreact.herokuapp.com/oauth'>
                   <button id="frontPageLogInButton">
                     <Icon icon="cib:github" id="gitHubLogo"/> Login with GitHub 
                   </button> <br/>
                </a>
               </div> <br/>
                 <h3 id ="noAccount"> Don't have a GitHub account? </h3>
-                  <a href="https://github.com/join" className="button" >
+                  <a rel="canonical" href="https://github.com/join" className="button" >
                     <div>
                       <button id="frontPageSignUpButton"> Sign Up </button>
                     </div>
