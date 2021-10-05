@@ -10,6 +10,7 @@ const accountController = {};
 
 // OAuth
 accountController.handleOAuth = async (req, res, next) => {
+  console.log('entered server.js/OAuth endpoint and handleOAuth controller');
   // deconstruct req.query to get code from first Github GET request
   const { code } = req.query;
   // handle edge case if code is not provided
@@ -84,7 +85,7 @@ accountController.handleOAuth = async (req, res, next) => {
     })
 
     // redirect to dashboard with the username as a query paramater (to modify Redux store)
-    return res.redirect(`http://localhost:3000/dashboard/username=${userData.login}`);
+    return res.redirect(`https://abstractreact.herokuapp.com/dashboard/username=${userData.login}`);
 }
 
 //create github repo
