@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Release-Beta%20--%201.0-lightgrey" alt="Version Beta 1.0.0" data-canonical-src="https://img.shields.io/badge/Release-Beta%20--%201.0-lightgrey" style="max-width: 100%;">
 </p>
 
-<h3 align="center">Abstract is a mobile first application focused on improving developer experience. Create mobile first application prototypes in real-time with proven UI frameworks such as React Bootstrap.</h3>
+<h3 align="center">Abstract is a mobile first application focused on improving developer experience in beta. Create mobile first application prototypes in real-time with proven UI frameworks such as React Bootstrap.</h3>
 
 </br>
 
@@ -96,11 +96,10 @@ Abstract is an open source product supported via the tech accelerator OS Labs/OS
 4. Create a pull request to dev.
 
 #### New feature log
-1. Implement as a PWA (progressive web application)
-2. Drag and drop feature from the component menu onto the canvas
-3. Refactor to TypeScript
-4. Support TypeScript exports
-5. Add support for additional component libraries (Material UI, Chakra UI, etc)
+1. Drag and drop feature from the component menu onto the canvas
+2. Refactor to TypeScript
+3. Support TypeScript exports
+4. Add support for additional component libraries (Material UI, Chakra UI, etc)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
