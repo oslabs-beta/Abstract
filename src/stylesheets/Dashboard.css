@@ -1,3 +1,36 @@
+/* Dashboard Container - only for Desktop */
+@media screen and (min-width: 1367px) {
+  body {
+    overflow: auto;
+  }
+
+  #dashboard_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ACC6E3;
+    height: 100vh;
+  }
+
+  #dashboard {
+    transform: scale(0.8);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  #component_menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #component_menu {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+}
+
 /* Export Modal Styling*/
 .backdrop {
   display: flex;
