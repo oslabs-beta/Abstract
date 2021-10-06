@@ -72,16 +72,20 @@ accountController.handleOAuth = async (req, res, next) => {
 
   // bcrypt access token before storing in db or in a jwt
   accessToken = await bcrypt.hash(accessToken, salt)
-    .then(hash => hash)
+    .then(hash => {
+      const token = jwt.sign(JSON.stringify(hash), process.env.USER_JWT_SECRET)
+  
+      res.cookie("github-token-jwt", token, {
+        httpOnly: true,
+        secure: true
+      })
+      
+      return hash;
+    })
     .catch(error => next(error));
 
+
   // store access token in a jwt cookie to send back to server on Github API request
-  const token = jwt.sign(JSON.stringify(accessToken), process.env.USER_JWT_SECRET)
-  
-  res.cookie("github-token-jwt", token, {
-    httpOnly: true,
-    secure: true
-  })
 
     // store user data in a jwt cookie to send back to server on Github API request
     const user = jwt.sign(JSON.stringify(userData), process.env.USER_JWT_SECRET)
