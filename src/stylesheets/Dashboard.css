@@ -1,18 +1,75 @@
+/* Dashboard Container - only for Desktop */
+@media screen and (min-width: 1367px) {
+  body {
+    overflow: auto;
+  }
+
+  #dashboard_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ACC6E3;
+    height: 100vh;
+  }
+
+  #dashboard {
+    transform: scale(0.8);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  #component_menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #component_menu {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+}
+
 /* Export Modal Styling*/
 .backdrop {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background: #000000e1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
+#canvas_backdrop {
+  background-color: white;
+  /* border-style: solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, black 50%, transparent 50%), 
+              linear-gradient(90deg, black 50%, transparent 50%), 
+              linear-gradient(0deg, black 50%, transparent 50%), 
+              linear-gradient(0deg, black 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 16px 4px, 16px 4px, 4px 16px, 4px 16px;
+    background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+    border-radius: 5px;
+    padding: 10px;
+    animation: dash 15s linear infinite;
+}
+@keyframes dash {
+  to {
+    background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+}
+}
 .abstract_modal {
   width: clamp(50%, 800px, 90%);
+  /* width:50%; */
   height: min(50%, 700px);
   margin: auto;
   padding: 0 1rem 0 5rem;
@@ -21,7 +78,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #c4c4c4;
+  background: #f5fbff;
 }
 
 #export_form {
@@ -73,6 +130,10 @@
   display: flex;
   justify-content: center;
   align-self: center;
+  /* padding: 10px; */
+  margin: 30px;
+  background-color: #f5fbff;
+  border: 2px solid #093A7B;
   
 }
 
@@ -93,6 +154,18 @@
   border: 0.25px solid;
   background-color: #f5fbff
 }
+#component_menu_banner {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #456DAA;
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+  height: 60px;
+}
 
 /* Dashboard-Right Styling */
 #dashboard_right {
@@ -100,7 +173,7 @@
   grid-template-columns: 60% auto 100px;
   grid-template-rows: 124px 420px auto;
   grid-template-areas: 
-  "dashboard_header profile_button_container profile_button_container"
+  "profile_button_container profile_button_container profile_button_container"
   "body_container body_container size_button"
   "body_container body_container nav_button";
 
@@ -109,7 +182,7 @@
   background-color: white;
 }
 
-#abstract_title {
+/* #abstract_title {
   grid-area: dashboard_header;
   grid-column-end: two;
 
@@ -126,20 +199,18 @@
 #dashboard_header svg {
   height: 60px;
   width: 60px;
-}
+} */
 
 #profile_button_container {
   grid-area: profile_button_container;
   grid-column-end: four;
-
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
-
-  margin-right: 20px;
-
+  justify-content: space-between;
+  /* border: 2px solid #093A7B; */
+  /* margin-right: 20px; */
   height: 124px;
 }
 
@@ -148,29 +219,36 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  height: 60px;
-  width: 120px;
-
-  background-color: #C4C4C4;
-  border: none;
-
-  margin-left: 24px;
-}
-
-#profile_button svg {
-  width: 32px;
-  height: 32px;
+  
+  height: 85px;
+  width: auto;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  
+  /* background-color: #f5fbff; */
+  border-top: 1px solid #093A7B;
+  border-bottom: 1px solid #093A7B;
+  
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 0px;
   margin-right: 12px;
 }
 
+/* #profile_button svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+} */
+
 #export_modal_button {
-  height: 60px;
-  width: 120px;
+  height: 85px;
+  width: auto;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #C4C4C4;
-  border: none;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
+  font-size: 1.25rem;
 }
 
 #body_container {
@@ -180,7 +258,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   height: 878px;
   width: 100%;
   background-color: white;
@@ -197,7 +274,6 @@
 #size_button_container {
   grid-area: size_button;
   grid-column-end: one;
-  /* width: 600px; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -207,11 +283,11 @@
 }
 
 #size_button_container button {
-  width: 60px;
-  height: 60px;
+  width: 85px;
+  height: 85px;
 
-  background-color: #C4C4C4;
-  border: none;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
 
   margin-bottom: 24px;
 }
@@ -233,16 +309,15 @@
   align-items: flex-end;
   justify-content: flex-start;
   margin-right: 12px;
-
 }
 
 #canvas_button,
 #preview_button {
-  width: 60px;
-  height: 60px;
+  width: 85px;
+  height: 85px;
 
-  background-color: #C4C4C4;
-  border: none;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
 
   margin-bottom: 24px;
 }
@@ -266,6 +341,13 @@
 .compMenuBtn {
   width: 100%;
   margin-top: 15px;
+  height: 40px;
+  border-top: 2px solid #093A78;
+  border-bottom: 2px solid #093A78;;
+  border-left: none;
+  border-right: none;
+  font-size: 1.25rem;
+  font-weight: lighter;
 }
 
 .compMenuBtn:hover {
@@ -303,6 +385,8 @@
 }
 #addButton {
   padding: 7px 10px 7px 10px;
+  margin-top: 40px;
+  width: 150px;
   color: white;
   background-color: #2B2929;
 }
@@ -310,11 +394,8 @@
 #h2 {
   font-size: 1rem;
 }
-@media (min-width:320px) {
 
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 0px) {
   #dashboard_right {
     width: auto;
     height: auto

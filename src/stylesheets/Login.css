@@ -38,20 +38,40 @@
   padding: 70px;;  
 }
 
+#loginButtonDiv {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 #frontPageLogInButton {
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 1.25rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 90px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
+  margin:0px;
 }
 
 #frontPageLogInButton:hover {
   box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
+#loginText {
+  margin: 20px;
+}
+
 #frontPageSignUpButton {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 6px;
+  height: 60px;
+  width: auto;
+  font-size: 1.25rem;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
 }
 
 
@@ -107,14 +127,18 @@
 @media (max-width: 820px) {
   #welcomeBorderBox {
     width:100%;
+    height:fit-content;
     padding: 0;
+  }
+  #loginButtonDiv {
+    width: 100%
   }
   #frontPageLogInButton {
     width: 100%;
     /* font-size: 1rem; */
   }
   #frontPageSignUpButton {
-    width:100%;
+    width:auto;
   }
   #abstractlogo {
     width: 80%;

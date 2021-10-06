@@ -20,12 +20,12 @@ function ComponentMenu (props) {
 
   return (
     <div id="component_menu">
-      <h3>Component Menu</h3>
+      <div id='component_menu_banner'>Component Menu</div>
       {
         props.componentMenu ?
           <>
             <button className="compMenuBtn" onClick={() => setLibrary('BootstrapLibrary')}>Bootstrap Library</button> { library === 'BootstrapLibrary' ? <BootstrapLibrary /> : null }
-            <button className="compMenuBtn" disabled={true} onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
+            <button className="compMenuBtn" onClick={() => setLibrary('HTMLLibrary')}>HTML Library</button> { library === 'HTMLLibrary' ? <HTMLLibrary /> : null }
             <button className="compMenuBtn" disabled={true} onClick={() => setLibrary('ReactRouterLibrary')}>React Router Library</button>{ library === 'ReactRouterLibrary' ? <ReactRouterLibrary /> : null }
             <ComSettings />
           </>

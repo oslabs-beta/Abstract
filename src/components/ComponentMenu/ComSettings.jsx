@@ -30,7 +30,7 @@ function ComSettings(props) {
               <Form.Control type='class_name' placeholder='Class name (optional)'/>
             </Form.Group>
           </Form>
-          <AddButton></AddButton>
+          <AddButton component="htmlDiv"></AddButton>
       </div>
       )
     case 'link': 
@@ -49,7 +49,7 @@ function ComSettings(props) {
             <Form.Control type='src_link'></Form.Control>
           </Form.Group>
         </Form>
-        <AddButton></AddButton>
+        <AddButton component="htmlLink"></AddButton>
       </div>
       )
     case 'image':
@@ -72,7 +72,7 @@ function ComSettings(props) {
               <Form.Control type='alt_text'></Form.Control>
             </Form.Group>
           </Form>
-          <AddButton></AddButton>
+          <AddButton component="htmlImage"></AddButton>
         </div>
       )
     case 'paragraph':
@@ -89,7 +89,7 @@ function ComSettings(props) {
               <Form.Control type='font_size'></Form.Control>
             </Form.Group>
           </Form>
-          <AddButton></AddButton>
+          <AddButton component="htmlParagraph"></AddButton>
         </div>
       )  
     case 'button':
@@ -110,7 +110,7 @@ function ComSettings(props) {
               <Form.Control type='font_size'></Form.Control>
             </Form.Group>
             </Form>
-          <AddButton component="button"></AddButton>
+          <AddButton component="bootstrapButton"></AddButton>
         </div>
       )
     case 'form':
@@ -196,7 +196,7 @@ function ComSettings(props) {
                   </Form.Select>
                 </Form.Group>
               </Form>
-              <AddButton component="form"></AddButton>
+              <AddButton component="bootstrapForm"></AddButton>
             </div>
             )
           }
@@ -256,7 +256,7 @@ function ComSettings(props) {
                     </Form.Select>
                   </Form.Group>
                 </Form>
-                <AddButton></AddButton>
+                <AddButton component="bootstrapNavbar"></AddButton>
               </div>
             )
           } else if (methods === 'Navbar.Brand') {
@@ -346,7 +346,7 @@ function ComSettings(props) {
                     <Form.Control type='nav_text' placeholder='nav text'></Form.Control>
                   </Form.Group>
               </Form>
-              <AddButton></AddButton>
+              <AddButton component="bootstrapNav"></AddButton>
             </div>
             )
           } else if (methods === 'Nav.Link') {
@@ -437,7 +437,7 @@ function ComSettings(props) {
                     <Form.Control type='nav_text' placeholder='nav text'></Form.Control>
                   </Form.Group>
               </Form>
-              <AddButton></AddButton>
+              <AddButton component="bootstrapList"></AddButton>
             </div>
             )
           } else if (methods === 'List.Group') {

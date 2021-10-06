@@ -31,9 +31,11 @@ function Dashboard(props) {
         {
           props.exportModal ? <ExportCodeModal /> : null
         }
-        <div id="dashboard">
-          <ComponentMenu></ComponentMenu>
-          <RightContainer></RightContainer>
+        <div id="dashboard_container">
+          <div id="dashboard">
+            <ComponentMenu></ComponentMenu>
+            <RightContainer></RightContainer>
+          </div>
         </div>
       </>
   )
