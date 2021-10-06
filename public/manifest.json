@@ -1,21 +1,33 @@
 {
   "short_name": "Abstract",
-  "name": "Abstract - Mobile First React Prototyping",
+  "name": "Abstract",
   "icons": [
     {
-      "src": "/images/logo.png",
-      "type": "image/png",
-      "sizes": "1024x1024"
+      "src": "/images/logo-192x192.png",
+      "type":"image/png",
+      "sizes": "192x192"
     },
     {
-      "src": "/images/logo.png",
-      "type": "image/png",
-      "sizes": "1024x1024",
-      "purpose": "maskable"
+      "src": "/images/logo-192x192.png",
+      "type":"image/png",
+      "sizes": "192x192",
+      "purpose":"maskable"
+    },
+    {
+      "src": "/images/logo-512x512.png",
+      "type":"image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/logo-512x512.png",
+      "type":"image/png",
+      "sizes": "512x512",
+      "purpose":"maskable"
     }
+  
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "Standalone",
+  "theme_color": "#61dafb",
+  "background_color": "#61dafb"
 }
