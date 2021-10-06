@@ -71,12 +71,9 @@ accountController.handleOAuth = async (req, res, next) => {
   })
 
   // bcrypt access token before storing in db or in a jwt
-  bcrypt.hash(accessToken, salt, (err, hash) => {
-    if (err) {
-      return next(err);
-    }
-    return accessToken = hash;
-  });
+  accessToken = await bcrypt.hash(accessToken, salt)
+    .then(hash => hash)
+    .catch(error => next(error));
 
   // store access token in a jwt cookie to send back to server on Github API request
   const token = jwt.sign(JSON.stringify(accessToken), process.env.USER_JWT_SECRET)
@@ -125,7 +122,7 @@ accountController.createRepo = async (req, res, next) => {
     // compare decodedCookie with access token from db (hashed)
     console.log('response.rows: ', db_result);
 
-    bcrypt.compare(db_result.session_id, decodedCookie.access_cookie)
+    console.log('bcrypy compare result: ', bcrypt.compare(db_result.session_id, decodedCookie.access_cookie));
 
     // if access token is valid, do every thing below
     const repo_name = req.body.repository_name;
