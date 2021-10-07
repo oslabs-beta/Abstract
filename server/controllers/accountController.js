@@ -34,7 +34,7 @@ accountController.handleOAuth = async (req, res, next) => {
           status: 500,
           message: error
         });
-      })
+      });
 
   // use access token from POST request above to access user
   let userData = await fetch('https://api.github.com/user', {
@@ -51,102 +51,94 @@ accountController.handleOAuth = async (req, res, next) => {
         status: 500,
         message: error
       })
-    })
+    });
 
   // db query: store access token in database under unique user _id and username
   const id = uuid();
   const query = `
   INSERT INTO user_sessions ("_id", "session_id", "username" )
-  VALUES ($1, $2, $3,);`;
+  VALUES ($1, $2, $3);`;
   const params = [id, accessToken, userData.login];
   const dbResponse = await db.query(query, params)
-  .then(response => {
-    return response;
-  })
-  .catch(error => {
-    return next({
-      status: 500,
-      message: error
+    .then(response => {
+      return response;
     })
-  })
+    .catch(error => {
+      return next({
+        status: 500,
+        message: error
+      })
+    });
 
   // bcrypt access token before storing in db or in a jwt
-  accessToken = await bcrypt.hash(accessToken, salt)
-    .then(hash => {
-      const token = jwt.sign(JSON.stringify(hash), process.env.USER_JWT_SECRET)
-  
-      res.cookie("github-token-jwt", token, {
-        httpOnly: true,
-        secure: true
-      })
-      
-      return hash;
-    })
-    .catch(error => next(error));
+  accessToken = await bcrypt.hash(accessToken.access_token, salt);
 
+  const token = jwt.sign(JSON.stringify(accessToken), process.env.USER_JWT_SECRET)
+
+  res.cookie("github-token-jwt", token, {
+    httpOnly: true,
+    secure: true
+  })
 
   // store access token in a jwt cookie to send back to server on Github API request
 
-    // store user data in a jwt cookie to send back to server on Github API request
-    const user = jwt.sign(JSON.stringify(userData), process.env.USER_JWT_SECRET)
+  // store user data in a jwt cookie to send back to server on Github API request
+  const user = jwt.sign(JSON.stringify(userData), process.env.USER_JWT_SECRET)
+  res.cookie("github-user-jwt", user, {
+    httpOnly: true,
+    secure: true
+  })
 
-    res.cookie("github-user-jwt", user, {
-      httpOnly: true,
-      secure: true
-    })
-
-    // redirect to dashboard with the username as a query paramater (to modify Redux store)
-    return res.redirect(`https://abstractreact.herokuapp.com/dashboard/username=${userData.login}`);
+  // redirect to dashboard with the username as a query paramater (to modify Redux store)
+  return res.redirect(`https://abstractreact.herokuapp.com/dashboard/username=${userData.login}`);
 }
 
 //create github repo
 accountController.createRepo = async (req, res, next) => {
-  try {
-    //get access token for octokit
-    const cookie = req.cookies["github-token-jwt"];
-    const decodedCookie = jwt_decode(cookie);
-    console.log('decodedCookie', decodedCookie);
+  // console.log('got to create Repo')
 
-    // get user data cookie
-    const userData = req.cookies["github-user-jwt"];
-    // decode user data cookie
-    const decodeduserData = jwt_decode(userData);
-    console.log('decoded user data: ', decodeduserData);
+  //get access token for octokit
+  const cookie = req.cookies["github-token-jwt"];
+  const decodedCookie = jwt_decode(cookie);
+
+  // get user data cookie
+  const userData = req.cookies["github-user-jwt"];
+  const decodeduserData = jwt_decode(userData);
+  
+  // get access token for user from database
+  const query = `SELECT session_id FROM user_sessions WHERE username = $1;`
+  const db_result = await db.query(query, [decodeduserData.login])
+    .then(response => response)
+    .catch(err => next(err));
     
-    // get access token for user from database
-    const query = `SELECT session_id FROM user_sessions WHERE username = $1`
+  // extract most recent access_token from db
+  // compare decodedCookie with access token from db (hashed)
+  const userToken = JSON.parse(db_result.rows[db_result.rows.length - 1].session_id).access_token;
+  const isUserValid = await bcrypt.compare(userToken, decodedCookie);
 
-    const db_result = await db.query(query, [decodeduserData.login])
-      .then(response => {
-        console.log ('db query access_token response', response);
-        return response.rows[0];
-      })
-      .catch(err => next(err))
-      
-    // compare decodedCookie with access token from db (hashed)
-    console.log('response.rows: ', db_result);
 
-    console.log('bcrypy compare result: ', bcrypt.compare(db_result.session_id, decodedCookie.access_cookie));
-
-    // if access token is valid, do every thing below
+  // start here after lunch
+  // if access token is valid, do every thing below
+  if (isUserValid) {
     const repo_name = req.body.repository_name;
-
-    const octokit = new Octokit({ auth: `${decodedCookie}` });
+    const octokit = new Octokit({ auth: `${userToken}` });
     const createResponse = await octokit.request(`POST /user/repos`, {
       name: `${repo_name}`,
       private: true,
       auto_init: true,
-    });
-    return next();
-  }
-  catch (error) {
-    return next({
-      status: 500,
-      message: error
     })
+      .then(response => response)
+      .catch(error => next({
+        status: 500,
+        message: error
+      }));
+      
+    // console.log('create Response', createResponse);
+    return next();
+  } else {
+    // if access token is not valid, console log to server the error, redirect to login page
+    return res.redirect('abstractreact.herokuapp.com');
   }
-
-  // if access token is not valid, console log to server the error, redirect to login page
 }
 
 //update repo with files
@@ -156,19 +148,40 @@ accountController.updateRepo = async (req, res, next) => {
     const commit_msg = req.body.commit_message;
     const repo_name = req.body.repository_name.replace(' ', '-');
     
+    // decoded token
     const cookie = req.cookies["github-token-jwt"];
-    const decodedCookie = jwt_decode(cookie).access_token;
+    const decodedCookie = jwt_decode(cookie);
     const prototypeCode = Buffer.from(`${req.body.prototypeCode}`, 'binary').toString('base64');
 
-    const octokit = new Octokit({ auth: `${decodedCookie}` });
-    const updateResponse = await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
-      owner: `${username}`,
-      repo: `${repo_name}`,
-      message: `${commit_msg}`,
-      content: `${prototypeCode}`,
-      path: `App.jsx`,
-    })
-    return next();
+    // decoded user data
+    const userData = req.cookies["github-user-jwt"];
+    const decodeduserData = jwt_decode(userData);
+    
+    // get access token for user from database
+    const query = `SELECT session_id FROM user_sessions WHERE username = $1;`
+    const db_result = await db.query(query, [decodeduserData.login])
+      .then(response => response)
+      .catch(err => next(err));
+
+    // extract most recent access_token from db
+    // compare decodedCookie with access token from db (hashed)
+    const userToken = JSON.parse(db_result.rows[db_result.rows.length - 1].session_id).access_token;
+    const isUserValid = await bcrypt.compare(userToken, decodedCookie);
+
+    if (isUserValid) {
+      const octokit = new Octokit({ auth: `${userToken}` });
+      const updateResponse = await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+        owner: `${username}`,
+        repo: `${repo_name}`,
+        message: `${commit_msg}`,
+        content: `${prototypeCode}`,
+        path: `App.jsx`,
+      })
+      return next();
+    } else {
+      return res.redirect('abstractreact.herokuapp.com');
+    }
+
   }
   catch (error) {
     return next({
