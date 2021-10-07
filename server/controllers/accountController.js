@@ -137,7 +137,7 @@ accountController.createRepo = async (req, res, next) => {
     return next();
   } else {
     // if access token is not valid, console log to server the error, redirect to login page
-    return res.redirect('abstractreact.herokuapp.com');
+    return res.redirect('https://abstractreact.herokuapp.com');
   }
 }
 
@@ -179,7 +179,7 @@ accountController.updateRepo = async (req, res, next) => {
       })
       return next();
     } else {
-      return res.redirect('abstractreact.herokuapp.com');
+      return res.redirect('https://abstractreact.herokuapp.com/');
     }
 
   }
