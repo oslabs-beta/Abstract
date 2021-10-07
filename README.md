@@ -50,6 +50,7 @@
 4. React-Bootstrap component integration.
 5. Export your prototype code to your Github account.
 6. Secure signup and login using Github OAuth.
+7. Installable progressive web application
 
 ## How To Use
 ### Web-based
