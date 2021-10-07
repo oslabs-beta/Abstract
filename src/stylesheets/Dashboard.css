@@ -78,7 +78,7 @@
 .abstract_modal {
   width: clamp(50%, 800px, 90%);
   /* width:50%; */
-  height: min(50%, 700px);
+  height: min(70%, 700px);
   margin: auto;
   padding: 0 1rem 0 5rem;
   border-radius: 12px;
@@ -96,6 +96,11 @@
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
+}
+
+#repository_name,
+#commit_message {
+  height: fit-content;
 }
 
 #close_modal {
