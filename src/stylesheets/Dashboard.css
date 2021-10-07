@@ -29,6 +29,14 @@
     scrollbar-width: none;  /* Firefox */
   }
 
+  .backdrop {
+    z-index: 9001;
+  }
+
+  .abstract_modal {
+    z-index: 9002;
+  }
+
 }
 
 /* Export Modal Styling*/
@@ -182,25 +190,6 @@
   background-color: white;
 }
 
-/* #abstract_title {
-  grid-area: dashboard_header;
-  grid-column-end: two;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  height: 124px;
-
-  font-size: 48px;
-}
-
-#dashboard_header svg {
-  height: 60px;
-  width: 60px;
-} */
-
 #profile_button_container {
   grid-area: profile_button_container;
   grid-column-end: four;
@@ -234,12 +223,6 @@
   margin-bottom: 0px;
   margin-right: 12px;
 }
-
-/* #profile_button svg {
-  width: 32px;
-  height: 32px;
-  margin-right: 12px;
-} */
 
 #export_modal_button {
   height: 85px;
