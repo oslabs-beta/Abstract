@@ -11,21 +11,59 @@ export const setUser = (username) => {
 
 // action for ADD_COMPONENT action type
 export const addComponent = (selectedComponent) => {
-  // if selectedComponent === "Form", assign payload to componentTypes.Form
-  if (selectedComponent === "form"){
-    return {
-      type: types.ADD_COMPONENT,
-      payload: componentTypes.form
-    }
+  switch (selectedComponent) {
+    case 'bootstrapForm':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.bootstrapForm
+      }
+    case 'bootstrapButton':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.bootstrapButton
+      }
+    case 'bootstrapNavbar':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.bootstrapNavbar
+      }
+    case 'bootstrapNav':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.bootstrapNav
+      }
+    case 'bootstrapList':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.bootstrapList
+      }
+    case 'htmlDiv':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.htmlDiv
+      }
+    case 'htmlLink':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.htmlLink
+      }
+    case 'htmlImage':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.htmlImage
+      }
+    case 'htmlParagraph':
+      return {
+        type: types.ADD_COMPONENT,
+        payload: componentTypes.htmlParagraph
+      }
+    default:
+      return {
+        type: types.ADD_COMPONENT,
+        payload: 'Not a component type.'
+      }
   }
-
-  if (selectedComponent === "button") {
-    return {
-      type: types.ADD_COMPONENT,
-      payload: componentTypes.button
-    }
-  }
-};
+}
 
 //action for DELETE_COMPONENT action type
 export const deleteComponent = (selectedComponent) => ({

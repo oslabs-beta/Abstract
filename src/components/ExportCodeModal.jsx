@@ -20,7 +20,7 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
     e.preventDefault();
     const { repository_name, commit_message } = e.target.elements
     // create github repo
-    const createRepo = await fetch('/export', {
+    const createRepo = await fetch('https://abstractreact.herokuapp.com/export', {
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify({
@@ -34,7 +34,7 @@ function ExportCodeModal ({ toggleExportModal, exportModal, ...props}) {
     .catch(e => console.log('create err :', e));
     
     //update files
-    const updateRepo = await fetch('/export', {
+    const updateRepo = await fetch('https://abstractreact.herokuapp.com/export', {
         method: 'PUT',
         mode: 'cors',
         body: JSON.stringify({

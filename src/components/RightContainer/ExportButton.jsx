@@ -16,8 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
 function ExportButton(props) {
   return (
     <button id="export_modal_button" onClick={() => { props.handleDropdown(); props.toggleExportModal(!props.exportModal); props.toggleBodyView('Canvas') }}>
-      <Icon icon="cib:github" id="gitHubLogo"/>
-       <b> Export </b>
+      <Icon icon="cib:github" id="gitHubLogo"/>Export
     </button>
   )
 };

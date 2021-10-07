@@ -5,7 +5,15 @@ const mapDispatchToProps = (dispatch) => ({
   selectComponent: (component) => dispatch(actions.selectComponent(component)),
 });
 
-function HTMLComponent({ selectComponent, name, key, pic }) {
+function HTMLComponent({ selectComponent, name, key, pic, disabled }) {
+  if (disabled) {
+    return (
+      <div>
+        <button disabled={true} onClick={() => selectComponent(name)} className='componentButton'>{pic}</button>
+        <p>{name}</p> 
+      </div>
+    );
+  }
   return (
     <div>
       <button  onClick={() => selectComponent(name)} className='componentButton'>{pic}</button>
