@@ -1,0 +1,147 @@
+.logInContainer {
+  text-align: center;
+  background-color: #F0F8FF;
+
+}
+
+#Abstract {
+  color: white;
+  position: relative;
+  bottom: -30px;
+}
+
+#abstractLogo {
+  opacity: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+.logInHeader {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(6px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#welcomeBorderBox {
+  box-shadow: deepskyblue 0px 3px 8px;
+  border-radius: 4px;
+  background-color: white;
+  width: 40%;
+  padding: 70px;;  
+}
+
+#loginButtonDiv {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#frontPageLogInButton {
+  border-radius: 5px;
+  font-size: 1.25rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 90px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
+  margin:0px;
+}
+
+#frontPageLogInButton:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#loginText {
+  margin: 20px;
+}
+
+#frontPageSignUpButton {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+  height: 60px;
+  width: auto;
+  font-size: 1.25rem;
+  background-color: #f5fbff;
+  border: 1px solid #093A7B;
+}
+
+
+#frontPageSignUpButton:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#logIn {
+  border-radius: 15px;
+  width: 270px;
+  height: 70px;
+  font-size: 30px;
+  word-wrap: break-word; 
+}
+
+#gitHubLogo {
+  width: 50px;
+  height: 50px;
+  padding: 1px;
+  
+}
+
+#hexagon {
+  color: white;
+}
+
+#welcomeMessage {
+  font-size: larger;
+  font-weight: 350;
+}
+#noAccount {
+  font-size: large;
+  font-weight: 400;
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 40px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* position: absolute;
+  top: 0; */
+  /* margin: 0%; */
+  /* width: 100px;
+  height: 100px; */
+}
+
+
+@media (max-width: 820px) {
+  #welcomeBorderBox {
+    width:100%;
+    height:fit-content;
+    padding: 0;
+  }
+  #loginButtonDiv {
+    width: 100%
+  }
+  #frontPageLogInButton {
+    width: 100%;
+    /* font-size: 1rem; */
+  }
+  #frontPageSignUpButton {
+    width:auto;
+  }
+  #abstractlogo {
+    width: 80%;
+    height: auto;
+  }
+}
