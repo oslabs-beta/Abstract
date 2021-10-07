@@ -53,7 +53,7 @@
 
 ## How To Use
 ### Web-based
-1. Visit [abstractreact.net](https://abstractreact.net)
+1. Visit [abstractreact.herokuapp.com](https://abstractreact.herokuapp.com)
 2. Login with a GitHub account
 3. (Note that steps 4-5 below are only required if you are not viewing from an iPad Pro)
 4. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices in landscape mod e.g. iPad Pro)
@@ -72,7 +72,7 @@
     ```
     npm run server
     ```
-5. Run the client (verify that locahost port 3000 is not being used)
+5. Run the client (verify that localhost port 3000 is not being used)
     ```
     npm start
     ```
