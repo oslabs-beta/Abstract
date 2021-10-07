@@ -32,16 +32,16 @@
 
 ## Demo
 ### Select Device Resolution for the Canvas
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/canvas-size.GIF?raw=true" alt="canvas-size-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/jonnie/readme-assets/switch-canvas.GIF?raw=true" alt="canvas-size-gif" style="max-width: 75%;">
 
 ### Render Components on the Canvas
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/render-components.GIF?raw=true" alt="render-components-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/jonnie/readme-assets/render-components.GIF?raw=true" alt="render-components-gif" style="max-width: 75%;">
 
 ### Review Code
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/review-code.GIF?raw=true" alt="review-code-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/jonnie/readme-assets/review-code.GIF?raw=true" alt="review-code-gif" style="max-width: 75%;">
 
 ### Export Code
-<img src="https://github.com/oslabs-beta/Abstract/blob/feature/github-readme/readme-assets/export-code.GIF?raw=true" alt="export-code-gif" style="max-width: 75%;">
+<img src="https://github.com/oslabs-beta/Abstract/blob/jonnie/readme-assets/export-code.GIF?raw=true" alt="export-code-gif" style="max-width: 75%;">
 
 ## Live Features
 1. Real-time live preview of your prototype including rendered components and styling.
@@ -55,9 +55,6 @@
 ### Web-based
 1. Visit [abstractreact.herokuapp.com](https://abstractreact.herokuapp.com)
 2. Login with a GitHub account
-3. (Note that steps 4-5 below are only required if you are not viewing from an iPad Pro)
-4. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices in landscape mod e.g. iPad Pro)
-5. Set the developer view to be "iPad Pro" & rotate the view to landscape (it is set to "Responsive" by default)
 ### Running local
 1. Clone this repo
     ```
@@ -68,17 +65,10 @@
     ```
     npm install
     ```
-4. Run the server (verify that localhost port 5000 is not being used)
-    ```
-    npm run server
-    ```
-5. Run the client (verify that localhost port 3000 is not being used)
+4. Run the client (verify that localhost port 3000 is not being used)
     ```
     npm start
     ```
-6. (Note that steps 7-8 below are only required if you are not viewing from an iPad Pro)
-7. Inspect the application by opening developer tools (note that the application is designed to be viewed on mobile devices e.g. iPad Pro)
-8. Set the developer view to be "iPad Pro" (it is set to "Responsive" by default)
 
 ## Contribute
 Abstract is an open-source product supported via the tech accelerator OS Labs/OS Labs-beta. We encourge all feedback and welcome all contributions. Note that this product does not have any full-time contributors. Expect that there will be a wait time before your pull request can be reviewed.
